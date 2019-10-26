@@ -4,7 +4,7 @@
 
 This repository consists of:
 
-- The manuscript for the [amorphys documentation]().
+- The manuscript for the [amorphys documentation](https://amorphys-documentation.readthedocs.io/).
 
 ## License
 
