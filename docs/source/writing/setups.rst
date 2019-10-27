@@ -1,6 +1,10 @@
 Setups
 ======
 
+.. note::
+
+    TODO: make a nice object diagram for "setups" section
+
 "setups" section
 ----------------
 

@@ -1,6 +1,10 @@
 Procedures
 ==========
 
+.. note::
+
+    TODO: make a nice object diagram for "procedures" section
+
 "procedures" section
 --------------------
 

@@ -1,6 +1,10 @@
 Project organization
 ====================
 
+.. note::
+
+    TODO: make a nice object diagram for "organization" section
+
 "organization" section
 ----------------------
 
@@ -19,7 +23,7 @@ Project organization
 
     .. py:attribute:: people
 
-        a mapping to :py:class:`Person` instances representing the people involved in
+        a mapping to :py:class:`Contributor` instances representing the people involved in
         this project.
 
     .. py:attribute:: affiliations
@@ -88,10 +92,10 @@ The instantiation of the :py:class:`Dataset` would look something like below:
 
         an array of :py:class:`Citation` objects referring to the articles related to this dataset.
 
-Person
-------
+Contributor
+-----------
 
-The ``Person`` class represents the contributor to this project.
+The ``Contributor`` class represents the contributor to this project.
 
 It normally looke like below:
 
@@ -113,38 +117,24 @@ It normally looke like below:
         ]
     },
 
-.. py:class:: Person
+.. py:class:: Contributor
 
-    It is a subclass of :py:class:`Individual`.
-    In addition to the superclass properties :py:attr:`name` and :py:attr:`uri`,
-    all of the properties described below are necessary.
+    It is a subclass of :py:class:`Person`.
 
-    .. py:attribute:: lastname
+    All the superclass properties are necessary:
 
-        a ``string`` representing the last name of this person.
-        This is used to identify the person across the database, especially
-        if the :py:attr:`uri` property is set to be ``null``.
+    - :py:attr:`name <Person.name>`
+    - :py:attr:`uri <Person.uri>`
+    - :py:attr:`lastname <Person.lastname>`
+    - :py:attr:`firstnames <Person.firstnames>`
+    - :py:attr:`contact <Person.contact>`
 
-    .. py:attribute:: firstnames
-
-        a ``string`` representing the first names (i.e. other than the last name) of this person.
-        This is used to identify the person across the database, especially
-        if the :py:attr:`uri` property is set to be ``null``.
-
-    .. py:attribute:: contact
-
-        a ``string`` representing the contact information of this person.
-
-        It is recommended to contain the e-mail address of the person here,
-        but it can be the mailing address, too.
-
-        This field can well be ``null`` if this person does not have, or is not
-        willing to share, a contact.
+    In addition, all of the properties described below are necessary.
 
     .. py:attribute:: affiliation
 
         an :py:class:`Institution` object, or a reference to one, or an array
-        of multiple of them, corresponding to the affiliations for this person,
+        of multiple of them, corresponding to the affiliations for this contributor,
         *in relation with this dataset publication*.
 
     .. py:attribute:: roles
@@ -170,7 +160,16 @@ Typically, it would look like below:
 .. py:class:: Institution
 
     This is a subclass of the :py:class:`Individual` class, with no additional properties.
-    Both :py:attr:`name` and :py:attr:`uri` fields are required.
+
+    .. py:attribute:: name
+
+        a required property inherited from :py:attr:`Individual.name`.
+        It represents the human-readable expression of this institution.
+
+    .. py:attribute:: uri
+
+        a required property inherited from :py:attr:`Individual.uri`.
+        It represents the URL (i.e. starting with ``https://``) of the institution.
 
 Funding
 -------

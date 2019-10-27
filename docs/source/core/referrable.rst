@@ -6,6 +6,17 @@ The classes below are used to refer to unique objects on the web based on their 
 The classes are supplied to fulfill our needs for the time being,
 but it may be substituted later if there exists any structure general enough to be used.
 
+.. code-block::
+
+    [Referrable] <-- [Individual] <-- [Person] <-- [organization:Contributor]
+                                  <-- [organization:Institution]
+                 <-- [License]
+                 <-- [Citation]
+
+.. note::
+
+    TODO: make a nice class diagram
+
 Referrable
 ----------
 
@@ -29,18 +40,66 @@ Referrable
 Individual
 ----------
 
+Any individuals (people, institutions, companies etc.) being referred to through the URI,
+are represented by the :py:class:`Individual` class.
+
+For reference to a person, in particular, the :py:class:`Person` class is used.
+
 .. py:class:: Individual
 
     a subclass of :py:class:`Referrable` being used to identify any individuals
     (people, institutions, companies etc.).
 
-    - :py:attr:`name` field would reflect what would appear as the "full-name" on the web pages.
-    - :py:attr:`uri` field may be:
+    .. py:attribute:: name
+
+        a required property inherited from :py:attr:`Referrable.name`.
+        It would typically reflect what would appear as the "full-name" on the web pages.
+
+    .. py:attribute:: uri
+
+        a required property inherited from :py:attr:`Referrable.uri`.
 
         - for an institution/company: the URL for its website (starting with ``https://``)
         - for a person: the ORCID (starting with ``ORCID:``)
 
         Can be ``null`` (but not recommended), if this individual does not have any ID.
+
+.. py:class:: Person
+
+    a subclass of :py:class:`Individual` being used to refer to a person.
+    All of the properties described below are necessary.
+
+    .. py:attribute:: name
+
+        inherited from :py:attr:`Individual.name`.
+        The full name as it would appear on the web pages.
+
+    .. py:attribute:: uri
+
+        inherited from :py:attr:`Individual.uri`.
+        The ORCID (a ``string`` starting with ``ORCID:``) of this person.
+
+    .. py:attribute:: lastname
+
+        a ``string`` representing the last name of this person.
+        This is used to identify the person across the database, especially
+        if the :py:attr:`uri` property is set to be ``null``.
+
+    .. py:attribute:: firstnames
+
+        a ``string`` representing the first names (i.e. other than the last name) of this person.
+        This is used to identify the person across the database, especially
+        if the :py:attr:`uri` property is set to be ``null``.
+
+    .. py:attribute:: contact
+
+        a ``string`` representing the contact information of this person.
+
+        It is recommended to contain the e-mail address of the person here,
+        but it can be the mailing address, too.
+
+        This field can well be ``null`` if this person does not have, or is not
+        willing to share, a contact.
 
 License
 -------
@@ -60,11 +119,17 @@ License
             "authors": { "$ref": "/organization/people" }
         }
 
-    - :py:attr:`name` represents the shorthand of the license e.g. "CC0", "MIT", "GPL2".
-    - :py:attr:`uri` field may be the terms and conditions representing this license.
-
-    In addition to the properties defined in :py:class:`Referrable`,
     a ``License`` object must have properties below:
+
+    .. py:attribute:: name
+
+        equivalent to :py:attr:`Referrable.name`.
+        It represents the shorthand of the license e.g. "CC0", "MIT", "GPL2".
+
+    .. py:attribute:: uri
+
+        equivalent to :py:attr:`Referrable.uri`.
+        It may be the terms and conditions representing this license.
 
     .. py:attribute:: authors
 
@@ -93,12 +158,18 @@ Citation
             "uri": "doi:10.1101/000000"
         }
 
-    - :py:attr:`name` is used to represent the human-readable citation
-    - :py:attr:`uri` represents the URI of the article, and may start either
-      with ``https://`` or with ``doi:``, depending on the type of the article.
+    The following properties are required:
 
-    In addition to the properties defined in :py:class:`Referrable`,
-    ``Citation`` has one required property.
+    .. py:attribute:: name
+
+        equivalent to :py:attr:`Referrable.name`, and is
+        used to represent the human-readable citation.
+
+    .. py:attribute:: uri
+
+        equivalent to :py:attr:`Referrable.uri`.
+        It represents the URI of the article, and may start either
+        with ``https://`` or with ``doi:``, depending on the type of the article.
 
     .. py:attribute:: reference-type
 

@@ -33,9 +33,10 @@ whatever it means.
   This document is licensed under a :raw-html:`<br />`
   `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
 
-.. Indices and tables
-.. ==================
-..
-.. * :ref:`genindex`
-.. * :ref:`modindex`
+Indices and tables
+==================
+
+* :ref:`Glossary <genindex>`
+
 .. * :ref:`search`
+.. * :ref:`modindex`
