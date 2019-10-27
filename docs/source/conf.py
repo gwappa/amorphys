@@ -22,7 +22,7 @@ copyright = '2019, Keisuke Sehara'
 author = 'Keisuke Sehara'
 
 # The full version, including alpha/beta/rc tags
-release = 'v1.0.0'
+release = 'v1.0.0a1'
 
 
 # -- General configuration ---------------------------------------------------
