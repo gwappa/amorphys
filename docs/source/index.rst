@@ -12,7 +12,7 @@ Welcome to amorphys!
 "amorphys" stands for "asymptotic metadata organization in physiology",
 whatever it means.
 
-``amorphys`` is a part of the `physiology data organization project <https://physiology-data-organization.readthedocs.io/>`_
+``amorphys`` is part of the `physiology data organization project <https://physiology-data-organization.readthedocs.io/>`_
 (`project page <https://github.com/gwappa/physiology-data-organization>`_).
 
 .. toctree::
@@ -21,6 +21,7 @@ whatever it means.
 
    overview
    core/entities
+   core/referrable
    writing/organization
    writing/setups
    writing/procedures

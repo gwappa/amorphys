@@ -24,7 +24,7 @@ Project organization
 
     .. py:attribute:: affiliations
 
-        a mapping to :py:class:`Affiliation` instances representing the affiliations
+        a mapping to :py:class:`Institution` instances representing the affiliations
         of the people involved.
 
     .. py:attribute:: funded-by
@@ -40,23 +40,137 @@ Project organization
 Dataset
 -------
 
+The instantiation of the :py:class:`Dataset` would look something like below:
+
+.. code-block:: JavaScript
+
+    {
+        "name":        "HumanForagingBehavior_PostdocRoom",
+        "description": "Tracking data of human subjects performing a foraging task inside a post-doc room",
+        "keywords":    ["foraging behavior", "human", "scientists"],
+        "license":     {
+            "name":    "CC0",
+            "uri":     "http://creativecommons.org/publicdomain/zero/1.0",
+            "year":    "2019",
+            "authors": { "$ref": "/organization/people" }
+        },
+        "references": [
+            {
+                "reference-type": "is-supplement-to",
+                "name": "Sehara K, Colomb J, Larkum ME (2019) Dendritic mechanisms underlying foraging behavior of human subjects.",
+                "uri": "doi:10.1101/000000"
+            }
+        ]
+    }
+
 .. py:class:: Dataset
 
-    (TODO)
+    a class to represent the metadata for this project dataset as a whole,
+    including a license information based on a :py:class:`License` object.
+
+    .. py:attribute:: name
+
+        a ``string`` representing the identifiable name of this dataset as a whole.
+
+    .. py:attribute:: description
+
+        a ``string`` representing the description of this dataset as a whole.
+
+    .. py:attribute:: keywords
+
+        an array of ``string`` objects representing the free keywords for this dataset.
+
+    .. py:attribute:: license
+
+        a :py:class:`License` object corresponding to the license clause of this dataset publication.
+
+    .. py:attribute:: references
+
+        an array of :py:class:`Citation` objects referring to the articles related to this dataset.
 
 Person
 ------
 
+The ``Person`` class represents the contributor to this project.
+
+It normally looke like below:
+
+.. code-block:: JavaScript
+
+    {
+        "name":       "Keisuke S.K. Sehara",
+        "lastname":   "Sehara",
+        "firstnames": "Keisuke S.K.",
+        "uri":        "ORCID:0000-0000-0000-0000",
+        "contact":    "kkkkkeeeeiiiissssuuuukkkkeeee@mail.chaos-software.cc",
+        "affiliation": [
+            { "$ref": "organization/affiliations/ChaosSoftware" },
+            { "$ref": "organization/affiliations/NerdUniversityTokyo" }
+        ]
+        "roles": [
+            "https://dictionary.casrai.org/Contributor_Roles/Data_curation",
+            "https://dictionary.casrai.org/Contributor_Roles/Software"
+        ]
+    },
+
 .. py:class:: Person
 
-    (TODO)
+    It is a subclass of :py:class:`Individual`.
+    In addition to the superclass properties :py:attr:`name` and :py:attr:`uri`,
+    all of the properties described below are necessary.
 
-Affiliation
+    .. py:attribute:: lastname
+
+        a ``string`` representing the last name of this person.
+        This is used to identify the person across the database, especially
+        if the :py:attr:`uri` property is set to be ``null``.
+
+    .. py:attribute:: firstnames
+
+        a ``string`` representing the first names (i.e. other than the last name) of this person.
+        This is used to identify the person across the database, especially
+        if the :py:attr:`uri` property is set to be ``null``.
+
+    .. py:attribute:: contact
+
+        a ``string`` representing the contact information of this person.
+
+        It is recommended to contain the e-mail address of the person here,
+        but it can be the mailing address, too.
+
+        This field can well be ``null`` if this person does not have, or is not
+        willing to share, a contact.
+
+    .. py:attribute:: affiliation
+
+        an :py:class:`Institution` object, or a reference to one, or an array
+        of multiple of them, corresponding to the affiliations for this person,
+        *in relation with this dataset publication*.
+
+    .. py:attribute:: roles
+
+        an array of roles, specified in terms of the `contributor roles <https://dictionary.casrai.org/Contributor_Roles>`_
+        (as it is defined in the `CRediT taxonomy <https://www.casrai.org/credit.html>`_).
+
+
+Institution
 -----------
 
-.. py:class:: Affiliation
+The :py:class:`Institution` class is used to represent the affiliated institution(s).
 
-    (TODO)
+Typically, it would look like below:
+
+.. code-block:: JavaScript
+
+    {
+        "name": "Chaos Software",
+        "uri":  "https://www.chaos-software.cc"
+    }
+
+.. py:class:: Institution
+
+    This is a subclass of the :py:class:`Individual` class, with no additional properties.
+    Both :py:attr:`name` and :py:attr:`uri` fields are required.
 
 Funding
 -------
