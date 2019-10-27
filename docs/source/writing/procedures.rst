@@ -5,13 +5,20 @@ Procedures
 
     TODO: make a nice object diagram for "procedures" section
 
+.. contents:: Contents
+    :local:
+
 "procedures" section
 --------------------
 
 .. py:class:: procedures
 
-    The ``procedures`` section of ``amorphys`` consists of the ``blocks`` and ``order`` subsections.
-    It is also *recommended* to contain the ``description`` field as well in the ``procedures`` section.
+    The ``procedures`` section of ``amorphys`` is a subclass of :py:class:`section`.
+    It consists of the ``blocks`` and ``order``, both of which are required properties.
+
+    .. py:attribute:: $description
+
+        a recommended ``string`` property inherited from :py:class:`section`.
 
     .. py:attribute:: blocks
 
@@ -22,12 +29,8 @@ Procedures
         an array of :py:class:`Relationship` instances representing
         the restrictions in the order between the specified :py:class:`Procedure` objects.
 
-    .. py:attribute:: description
-
-        a ``string`` describing that this is the ``procedures`` section of this project.
-
-Procedure
----------
+Procedure class
+---------------
 
 .. py:class:: Procedure
 

@@ -5,20 +5,23 @@ Setups
 
     TODO: make a nice object diagram for "setups" section
 
+.. contents:: Contents
+    :local:
+
 "setups" section
 ----------------
 
 .. py:class:: setups
 
-    The ``setups`` section of ``amorphys`` consists of a mapping of ``Setup`` objects.
-    It is also *recommended* to contain the ``description`` field as well in the ``setups`` section.
+    The ``setups`` section of ``amorphys`` is a subclass of :py:class:`section`,
+    and consists of a mapping of ``Setup`` objects.
 
-    .. py:attribute:: description
+    .. py:attribute:: $description
 
-        a recommended ``string`` field describing that this is the ``setups`` section of this project.
+        a recommended ``string`` field inherited from the :py:class:`section` class.
 
-Setup
------
+Setup class
+-----------
 
 .. py:class:: Setup
 

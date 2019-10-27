@@ -1,6 +1,9 @@
 URI-based reference
 ===================
 
+.. contents:: Contents
+    :local:
+
 The classes below are used to refer to unique objects on the web based on their URIs.
 
 The classes are supplied to fulfill our needs for the time being,
@@ -17,8 +20,8 @@ but it may be substituted later if there exists any structure general enough to 
 
     TODO: make a nice class diagram
 
-Referrable
-----------
+Referrable class
+----------------
 
 .. py:class:: Referrable
 
@@ -37,8 +40,8 @@ Referrable
 
 
 
-Individual
-----------
+Individual class
+----------------
 
 Any individuals (people, institutions, companies etc.) being referred to through the URI,
 are represented by the :py:class:`Individual` class.
@@ -63,6 +66,9 @@ For reference to a person, in particular, the :py:class:`Person` class is used.
         - for a person: the ORCID (starting with ``ORCID:``)
 
         Can be ``null`` (but not recommended), if this individual does not have any ID.
+
+Person class
+------------
 
 .. py:class:: Person
 
@@ -101,8 +107,8 @@ For reference to a person, in particular, the :py:class:`Person` class is used.
         This field can well be ``null`` if this person does not have, or is not
         willing to share, a contact.
 
-License
--------
+License class
+-------------
 
 .. py:class:: License
 
@@ -141,8 +147,8 @@ License
         a ``string`` representing the year (or a range of years) when
         this license is valid from.
 
-Citation
---------
+Citation class
+--------------
 
 .. py:class:: Citation
 

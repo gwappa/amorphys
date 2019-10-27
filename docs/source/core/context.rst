@@ -1,6 +1,9 @@
 Context
 =======
 
+Context class
+-------------
+
 .. py:class:: Context
 
     The ``Context`` is a subclass of :py:class:`Entity`:

@@ -5,17 +5,21 @@ Project organization
 
     TODO: make a nice object diagram for "organization" section
 
+.. contents:: Contents
+    :local:
+
 "organization" section
 ----------------------
 
 .. py:class:: organization
 
-    The ``organization`` section of ``amorphys`` describes the organization of the
-    project group, and consists of several fields:
+    The ``organization`` section of ``amorphys`` is a subclass of :py:class:`section`,
+    and describes the organization of the project group.
+    It consists of several fields:
 
-    .. py:attribute:: description
+    .. py:attribute:: $description
 
-        a recommended ``string`` field describing that this is the ``organization`` section of this project.
+        a recommended field that is equivalent to that in :py:class:`section`.
 
     .. py:attribute:: dataset
 
@@ -41,8 +45,8 @@ Project organization
         an array of references to an item or more in :py:attr:`people`, representing
         the people contributed to publish this dataset.
 
-Dataset
--------
+Dataset class
+-------------
 
 The instantiation of the :py:class:`Dataset` would look something like below:
 
@@ -92,8 +96,8 @@ The instantiation of the :py:class:`Dataset` would look something like below:
 
         an array of :py:class:`Citation` objects referring to the articles related to this dataset.
 
-Contributor
------------
+Contributor class
+-----------------
 
 The ``Contributor`` class represents the contributor to this project.
 
@@ -143,8 +147,8 @@ It normally looke like below:
         (as it is defined in the `CRediT taxonomy <https://www.casrai.org/credit.html>`_).
 
 
-Institution
------------
+Institution class
+-----------------
 
 The :py:class:`Institution` class is used to represent the affiliated institution(s).
 
@@ -171,8 +175,8 @@ Typically, it would look like below:
         a required property inherited from :py:attr:`Individual.uri`.
         It represents the URL (i.e. starting with ``https://``) of the institution.
 
-Funding
--------
+Funding class
+-------------
 
 .. py:class:: Funding
 

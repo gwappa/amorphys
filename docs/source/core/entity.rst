@@ -1,6 +1,9 @@
 Entity
 ======
 
+Entity class
+------------
+
 .. py:class:: Entity
 
     The ``Entity`` is a class for JSON objects representing physical existences.

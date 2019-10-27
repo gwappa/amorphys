@@ -1,6 +1,9 @@
 Overview
 ========
 
+.. contents:: Contents
+    :local:
+
 Background
 ----------
 

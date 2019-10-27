@@ -1,6 +1,9 @@
 Relationship
 ============
 
+.. contents:: Contents
+    :local:
+
 The :py:class:`Relationship` is a class for JSON objects, and represents contextual relationships
 between two or more :py:class:`Entity` instances.
 
@@ -8,6 +11,9 @@ The notations in :py:class:`Relationship` is used to set up a `semantic triple <
 (in fact, in terms of notation, it is probably closer to `N-quads notation <https://www.w3.org/TR/n-quads/>`_)
 
 For example, one can specify a certain contextual-spatial relationship as follows:
+
+Overview
+--------
 
 .. code-block:: JavaScript
 
@@ -46,6 +52,9 @@ Note that the keys ``in-front-of`` and ``during`` are ontologically defined
 elsewhere as spatial or contextual relationships.
 See :ref:`pre-defined relationship keys <relationship-keys>` for what is already defined.
 
+Restriction class
+-----------------
+
 .. py:class:: Restriction
 
     a base class for :py:class:`Relationship`.
@@ -65,6 +74,9 @@ See :ref:`pre-defined relationship keys <relationship-keys>` for what is already
 
         a JSON reference to an instance defined elsewhere, representing the
         object part of the semantic triple.
+
+Relationship class
+------------------
 
 .. py:class:: Relationship
 

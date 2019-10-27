@@ -1,12 +1,115 @@
-Metadata organization
-=====================
+Overview
+========
 
-Here, metadata formatting in ``amorphys`` is described.
+.. contents:: Contents
+    :local:
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Table of contents:
+Sections
+--------
 
-   organization
-   setups
-   procedures
+The ``amorphys`` metadata format consists of distinct sections:
+
+1. the ":doc:`organization <organization>`" section
+2. the ":doc:`setups <setups>`" section
+3. the "acquisition" section
+4. the ":doc:`procedures <procedures>`" section
+5. the "tasks" section
+6. the "variables" section
+
+In principle, the six sections are independent from each other:
+**you can only implement some of them while leaving the others unimplemented**,
+if you are fine with this way.
+
+"section" class
+---------------
+
+.. py:class:: section
+
+    Each section of ``amorphys`` has different properties of its own.
+    But it can have an optional property, :py:attr:`$description` to describe itself.
+
+    .. py:attribute:: $description
+
+        a human-readable ``string`` description of the section.
+        It is recommended to include this property for every section,
+        for increased understandability.
+
+Formatting options
+------------------
+
+As described below, there are two ways to organize these sections (i.e.
+:ref:`single-file` and :ref:`multi-file` formats),
+and it is completely up to the user which way to choose.
+
+.. _single-file:
+
+Single-file format
+^^^^^^^^^^^^^^^^^^
+
+A most simple way of formatting in ``amorphys`` is to make a large, single JSON file:
+
+.. code-block:: JavaScript
+
+    {
+        "$schema": "...",
+
+        "organization" {
+            ...
+        },
+
+        "setups": {
+            ...
+        },
+
+        "acquisition": {
+            ...
+        },
+
+        ...
+    }
+
+In the example above (the content of each section is omitted for simplicity),
+each of the implemented sections is represented as *a value to the corresponding
+key*.
+
+While it may be simple in reading and parsing, it may be difficult to be read
+by the human beings.
+
+.. _multi-file:
+
+Multi-file format
+^^^^^^^^^^^^^^^^^
+
+Another way of formatting in ``amorphys`` involves splitting sections into multiple JSON files:
+
+.. code-block:: JavaScript
+    :caption: organization.json
+
+    {
+        "dataset": {
+            ...
+        },
+
+        "people": {
+            ...
+        },
+
+        ...
+    }
+
+.. code-block:: JavaScript
+    :caption: setups.json
+
+    {
+        "behavioral-rig": {
+            ...
+        },
+
+        ...
+    }
+
+In the example above (again, the details are omitted for brevity),
+each of the implemented sections are represented as *a file with the corresponding name*.
+
+This may have some difficulty in referring to an entity across multiple sections,
+but individual JSON files become much smaller, and may be easier to read by a human being.
