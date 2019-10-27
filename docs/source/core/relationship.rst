@@ -1,37 +1,5 @@
-Entities, Relationships and Contexts
-====================================
-
-The three key concepts in ``amorphys`` are:
-
-1. **Entity**: represents a physical existence.
-2. **Relationship**: represents a relationship between two Entity instances.
-3. **Context**: represents a group of Entities and Relationships.
-
-Entity
-------
-
-.. py:class:: Entity
-
-    The ``Entity`` is a class for JSON objects representing physical existences.
-    It has two required properties, ``type`` and ``description``.
-
-    .. py:attribute:: type
-
-        a ``string`` object representing the type of this Entity instance.
-
-    .. py:attribute:: description
-
-        a ``string`` description of this Entity instance.
-
-    In addition to the above required properties, an Entity instance can have
-    the following optional property:
-
-    .. py:attribute:: reference
-
-        a ``string`` or ``[ string ]`` that contains the URL(s) related to this Entity instance.
-
 Relationship
-------------
+============
 
 The :py:class:`Relationship` is a class for JSON objects, and represents contextual relationships
 between two or more :py:class:`Entity` instances.
@@ -122,23 +90,6 @@ See :ref:`pre-defined relationship keys <relationship-keys>` for what is already
 
         For the time being, only one :py:class:`Restriction` object is allowed
         (i.e., use of an array is not allowed) here.
-
-
-Context
--------
-
-.. py:class:: Context
-
-    The ``Context`` is a subclass of :py:class:`Entity`:
-    it consists of (at least) the :py:attr:`type`, :py:attr:`description`,
-    and optional :py:attr:`reference` properties.
-
-    Actually, ``Context`` does not have a unique property on its own,
-    but it works as a marker that tells the processor that this consists of
-    a group of :py:class:`Entity` and :py:class:`Relationship` objects.
-
-    Additional required/optional properties may be defined in subclasses of
-    ``Context``.
 
 .. _relationship-keys:
 

@@ -16,15 +16,12 @@ whatever it means.
 (`project page <https://github.com/gwappa/physiology-data-organization>`_).
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Table of contents:
 
    overview
-   core/entities
-   core/referrable
-   writing/organization
-   writing/setups
-   writing/procedures
+   core/overview
+   writing/overview
 
 .. figure:: https://i.creativecommons.org/l/by/4.0/88x31.png
   :alt: License: CC-BY 4.0
