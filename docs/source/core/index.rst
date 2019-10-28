@@ -19,3 +19,4 @@ In addition, :doc:`referrable` is defined to facilitate annotation.
    relationship
    context
    referrable
+   supplementary
