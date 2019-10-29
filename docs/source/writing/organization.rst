@@ -11,6 +11,52 @@ Project organization
 "organization" section
 ----------------------
 
+A typical :py:class:`organization` would look like below:
+
+.. code-block:: JavaScript
+
+    {
+        "$description": "the project organization for foraging experiment",
+
+        "dataset": {
+            "name": "HumanForagingBehavior_PostdocRoom",
+            ...
+        },
+
+        "people": {
+            "Keisuke": {
+                "name": "Keisuke S.K. Sehara",
+                ...
+            },
+            "Julien": {
+                "name": "Julien Colomb",
+                ...
+            },
+            ...
+        },
+
+        "affiliations": {
+            "ChaosSoftware": {
+                "name": "Chaos Software",
+                ...
+            },
+            ...
+        },
+
+        "funded-by": {
+            "DFG": {
+                "name": "Deutliche Forschungsgesellschaft",
+                ...
+            },
+            ...
+        },
+
+        "data-published-by": [
+            { "$ref": "../people/Keisuke" },
+            { "$ref": "../people/Julien" }
+        ]
+    }
+
 .. py:class:: organization
 
     The ``organization`` section of ``amorphys`` is a subclass of :py:class:`section`,
