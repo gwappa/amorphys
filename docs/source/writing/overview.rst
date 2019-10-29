@@ -83,7 +83,7 @@ Multi-file format
 Another way of formatting in ``amorphys`` involves splitting sections into multiple JSON files:
 
 .. code-block:: JavaScript
-    :caption: organization.json
+    :caption: in: "organization.json"
 
     {
         "dataset": {
@@ -98,7 +98,7 @@ Another way of formatting in ``amorphys`` involves splitting sections into multi
     }
 
 .. code-block:: JavaScript
-    :caption: setups.json
+    :caption: in: "setups.json"
 
     {
         "behavioral-rig": {

@@ -17,6 +17,18 @@ Context class
     Additional required/optional properties may be defined in subclasses of
     ``Context``.
 
+    .. py:attribute:: type
+
+        a required ``string`` object inherited from :py:class:`Entity`.
+
+    .. py:attribute:: description
+
+        a required ``string`` description inherited from :py:class:`Entity`.
+
+    .. py:attribute:: reference
+    
+        an optional set of URIs, in ``string`` or ``[ string ]``, inherited from :py:class:`Entity`.
+
 .. toctree::
    :maxdepth: 2
    :caption: Table of contents:
