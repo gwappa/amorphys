@@ -19,6 +19,7 @@ whatever it means.
    :maxdepth: 3
    :caption: Table of contents:
 
+   objectives
    overview
    core/index
    writing/index
