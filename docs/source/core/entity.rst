@@ -66,6 +66,34 @@ You can check representative subclasses of :py:class:`Spatial`: see :doc:`spatia
 
 The nature of each :py:class:`Spatial` entity is represented ontologically.
 
+Temporal entity
+^^^^^^^^^^^^^^^
+
+The :py:class:`Temporal` is a subclass of :py:class:`Entity`, and is
+used to represent a certain temporal event or phase.
+
+You can check representative subclasses of :py:class:`Temporal`: see :doc:`temporal` for details.
+
+.. py:class:: Temporal
+
+    the root class of all the temporal existence classes.
+
+    .. py:attribute:: type
+
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+        This field must hold ``"Temporal"`` or the name of one of its subclasses.
+
+    .. py:attribute:: description
+
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+
+    .. py:attribute:: reference
+
+        an optional ``string`` or ``[ string ]`` property inherited as an
+        :py:class:`Entity` instance.
+
+The nature of each :py:class:`Temporal` entity is represented ontologically.
+
 Qualitative entity
 ^^^^^^^^^^^^^^^^^^
 
@@ -158,15 +186,6 @@ You can check representative subclasses of :py:class:`Quality`: see :doc:`qualit
         :py:class:`Entity` instance.
 
 The quality underlying each :py:class:`Quality` entity is represented ontologically.
-
-Procedural entity
-^^^^^^^^^^^^^^^^^
-
-The :py:class:`Procedure` is a subclass of :py:class:`Entity`, and is used
-to represent an atomic procedure of dealing with a group of entities, such as setting up
-a certain context consisting of a group of entities and relationships.
-
-The quality underlying each :py:class:`Procedure` entity is represented ontologically.
 
 Programs and Routines
 ^^^^^^^^^^^^^^^^^^^^^
