@@ -51,7 +51,7 @@ A most simple way of formatting in ``amorphys`` is to make a large, single JSON 
 .. code-block:: JavaScript
 
     {
-        "$schema": "...",
+        "$schema": "https://.../amorphys.json",
 
         "organization" {
             ...
@@ -86,6 +86,8 @@ Another way of formatting in ``amorphys`` involves splitting sections into multi
     :caption: in: "organization.json"
 
     {
+        "$schema": "https://.../amorphys.json#properties/organization",
+
         "dataset": {
             ...
         },
@@ -101,6 +103,8 @@ Another way of formatting in ``amorphys`` involves splitting sections into multi
     :caption: in: "setups.json"
 
     {
+        "$schema": "https://.../amorphys.json#properties/setups",
+
         "behavioral-rig": {
             ...
         },
