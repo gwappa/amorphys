@@ -10,4 +10,5 @@ Here, metadata formatting in ``amorphys`` is described.
    overview
    organization
    setups
+   acquisition
    procedures

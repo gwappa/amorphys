@@ -17,6 +17,7 @@ A typical :py:class:`setups` section would look like below:
     :caption: in: "setups.json"
 
     {
+        "$schema":      "https://.../amorphys.json#properties/setups",
         "$description": "experimental setups for the foraging-behavior project",
 
         "postdoc-room": {
@@ -36,9 +37,9 @@ A typical :py:class:`setups` section would look like below:
 
             "layout": [
                 {
-                    "about":       { "$ref": "../components/fridge" },
-                    "predicate":   "left-side-of",
-                    "relative-to": { "$ref": "../components/KeisukesDesk" }
+                    "@context":     "https://.../amorphys-spatial",
+                    "@id":          { "$ref": "../components/fridge" },
+                    "left-side-of": { "$ref": "../components/KeisukesDesk" }
                 },
                 ...
             ]

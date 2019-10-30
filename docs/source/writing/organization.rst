@@ -14,8 +14,10 @@ Project organization
 A typical :py:class:`organization` would look like below:
 
 .. code-block:: JavaScript
+    :caption: in: "organization.json"
 
     {
+        "$schema":      "https://.../amorphys.json#properties/organization"
         "$description": "the project organization for foraging experiment",
 
         "dataset": {
