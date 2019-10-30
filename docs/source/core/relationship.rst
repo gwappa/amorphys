@@ -45,18 +45,24 @@ Pre-defined relationship keys
 Each of the following pre-defined relationship keys work to restrict the relationship
 between the two object being specified.
 
-Spatial specifications
+.. _spatial-relationships:
+
+Spatial relationships
+^^^^^^^^^^^^^^^^^^^^^
+
+(TODO)
+
+.. _temporal-relationships:
+
+Temporal relationships
 ^^^^^^^^^^^^^^^^^^^^^^
 
 (TODO)
 
-Temporal specifications
-^^^^^^^^^^^^^^^^^^^^^^^
+.. _signal-relationships:
 
-(TODO)
-
-Cross-modal specifications
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Relationships between signals
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (TODO)
 

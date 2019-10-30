@@ -23,9 +23,13 @@ A typical :py:class:`acquisition` section would look like below:
             ...
         },
 
-        "channels": {
+        "signals": {
             ...
-        }
+        },
+
+        "conversion": [
+            ...
+        ]
     }
 
 .. py:class:: acquisition
@@ -47,7 +51,7 @@ A typical :py:class:`acquisition` section would look like below:
 
         For an example Program, refer to :ref:`this section <program-example>`.
 
-    .. py:attribute:: channels
+    .. py:attribute:: signals
 
         a required mapping that maps channel names to :py:class:`Quality` instances
         used in the experiments. Note that, as soon as a :py:class:`Quality` instance
@@ -55,3 +59,11 @@ A typical :py:class:`acquisition` section would look like below:
         :py:class:`Quality` instance with a different name.
 
         For an example channel (Quality), refer to :ref:`this section <quality-example>`.
+
+    .. py:attribute:: conversion
+
+        a required array (but can be empty) of :py:class:`Relationship` objects
+        that describes how each :py:class:`Quality` in :py:attr:`channels`
+        relates to each other.
+
+        For available vocabulary, refer to :ref:`signal-relationships`.
