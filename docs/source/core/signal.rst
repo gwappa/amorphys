@@ -1,7 +1,7 @@
-List of subclasses for Quality
-==============================
+List of predefined Signal subclasses
+====================================
 
-Representative classes of the :py:class:`Quality` class are described below.
+Representative classes of the :py:class:`Signal` class are described below.
 
 .. contents:: Contents
     :local:
@@ -9,14 +9,14 @@ Representative classes of the :py:class:`Quality` class are described below.
 Signal entity
 -------------
 
-.. py:class:: Signal
+.. py:class:: Sampled
 
-    for quality that is continuously sampled
+    for signal that is continuously sampled
 
     .. py:attribute:: type
 
         a required ``string`` property inherited as an :py:class:`Entity` instance.
-        This property must hold ``"Signal"`` or the name of one of its subclasses.
+        This property must hold ``"Sampled"`` or the name of one of its subclasses.
 
     .. py:attribute:: description
 
@@ -25,27 +25,27 @@ Signal entity
     .. py:attribute:: role
 
         a required ``string`` property referring to what role it plays in the context
-        of this physiology experiment, as it is inherited from :py:class:`Quality`.
+        of this physiology experiment, as it is inherited from :py:class:`Signal`.
 
-    .. py:attribute:: dimension
+    .. py:attribute:: quality
 
-        a required ``string`` property describing the physical dimension that
-        this signal is supposed to reflect, as it is inherited from :py:class:`Quality`.
+        a required ``string`` property describing the physical quality that
+        this signal is supposed to reflect, as it is inherited from :py:class:`Signal`.
 
     .. py:attribute:: generated-by
 
         a required property indicating what spatial existence generates/emits this signal,
-        as it is inherited from :py:class:`Quality`.
+        as it is inherited from :py:class:`Signal`.
 
     .. py:attribute:: monitored-by
 
         a required property indicating what spatial existence monitors/reads this signal,
-        as it is inherited from :py:class:`Quality`.
+        as it is inherited from :py:class:`Signal`.
 
     .. py:attribute:: values
 
         a required ``object`` property to describe what algebraic values
-        this signal must hold, as it is inherited from :py:class:`Quality`.
+        this signal must hold, as it is inherited from :py:class:`Signal`.
 
     .. py:attribute:: reference
 
@@ -66,7 +66,7 @@ Event entity
 
 .. py:class:: Event
 
-    for quality that "occurs" discretely from time to time.
+    for signal that "occurs" discretely from time to time.
 
     .. py:attribute:: type
 
@@ -80,27 +80,27 @@ Event entity
     .. py:attribute:: role
 
         a required ``string`` property referring to what role it plays in the context
-        of this physiology experiment, as it is inherited from :py:class:`Quality`.
+        of this physiology experiment, as it is inherited from :py:class:`Signal`.
 
-    .. py:attribute:: dimension
+    .. py:attribute:: quality
 
-        a required ``string`` property describing the physical dimension that
-        this event type is supposed to reflect, as it is inherited from :py:class:`Quality`.
+        a required ``string`` property describing the physical quality that
+        this event type is supposed to reflect, as it is inherited from :py:class:`Signal`.
 
     .. py:attribute:: generated-by
 
         a required property indicating what spatial existence generates/emits this event type,
-        as it is inherited from :py:class:`Quality`.
+        as it is inherited from :py:class:`Signal`.
 
     .. py:attribute:: monitored-by
 
         a required property indicating what spatial existence monitors/reads this event type,
-        as it is inherited from :py:class:`Quality`.
+        as it is inherited from :py:class:`Signal`.
 
     .. py:attribute:: values
 
         a required ``object`` property to describe what algebraic values
-        this event type must hold, as it is inherited from :py:class:`Quality`.
+        this event type must hold, as it is inherited from :py:class:`Signal`.
 
     .. py:attribute:: reference
 
@@ -136,27 +136,27 @@ State entity
     .. py:attribute:: role
 
         a required ``string`` property referring to what role it plays in the context
-        of this physiology experiment, as it is inherited from :py:class:`Quality`.
+        of this physiology experiment, as it is inherited from :py:class:`Signal`.
 
-    .. py:attribute:: dimension
+    .. py:attribute:: quality
 
-        a required ``string`` property describing the physical dimension that
-        this state type is supposed to reflect, as it is inherited from :py:class:`Quality`.
+        a required ``string`` property describing the physical quality that
+        this state type is supposed to reflect, as it is inherited from :py:class:`Signal`.
 
     .. py:attribute:: generated-by
 
         a required property indicating what spatial existence generates/emits this state type,
-        as it is inherited from :py:class:`Quality`.
+        as it is inherited from :py:class:`Signal`.
 
     .. py:attribute:: monitored-by
 
         a required property indicating what spatial existence monitors/reads this state type,
-        as it is inherited from :py:class:`Quality`.
+        as it is inherited from :py:class:`Signal`.
 
     .. py:attribute:: values
 
         a required ``object`` property to describe what algebraic values
-        this state type must hold, as it is inherited from :py:class:`Quality`.
+        this state type must hold, as it is inherited from :py:class:`Signal`.
 
     .. py:attribute:: properties
 

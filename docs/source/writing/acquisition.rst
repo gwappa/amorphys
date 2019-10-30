@@ -35,7 +35,7 @@ A typical :py:class:`acquisition` section would look like below:
 .. py:class:: acquisition
 
     The ``acquisition`` section of ``amorphys`` is a subclass of :py:class:`section`.
-    It holds :py:class:`Program` and :py:class:`Quality` instances.
+    It holds :py:class:`Program` and :py:class:`Signal` instances.
 
     .. py:attribute:: $description
 
@@ -53,17 +53,17 @@ A typical :py:class:`acquisition` section would look like below:
 
     .. py:attribute:: signals
 
-        a required mapping that maps channel names to :py:class:`Quality` instances
-        used in the experiments. Note that, as soon as a :py:class:`Quality` instance
+        a required mapping that maps channel names to :py:class:`Signal` instances
+        used in the experiments. Note that, as soon as a :py:class:`Signal` instance
         gets processed by a device or a program, it must turn into another distinct
-        :py:class:`Quality` instance with a different name.
+        :py:class:`Signal` instance with a different name.
 
-        For an example channel (Quality), refer to :ref:`this section <quality-example>`.
+        For an example, refer to :ref:`this section <signal-example>`.
 
     .. py:attribute:: conversion
 
         a required array (but can be empty) of :py:class:`Relationship` objects
-        that describes how each :py:class:`Quality` in :py:attr:`channels`
+        that describes how each :py:class:`Signal` in :py:attr:`channels`
         relates to each other.
 
         For available vocabulary, refer to :ref:`signal-relationships`.

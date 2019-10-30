@@ -94,32 +94,32 @@ You can check representative subclasses of :py:class:`Temporal`: see :doc:`tempo
 
 The nature of each :py:class:`Temporal` entity is represented ontologically.
 
-Qualitative entity
-^^^^^^^^^^^^^^^^^^
+Signals
+^^^^^^^
 
-The :py:class:`Quality` is a subclass of :py:class:`Entity`, and is used
+The :py:class:`Signal` is a subclass of :py:class:`Entity`, and is used
 to represent a certain quality that goes between spatial entities.
 
-An example entry for a :py:class:`Quality` entity looks like below:
+An example entry for a :py:class:`Signal` entity looks like below:
 
-.. _quality-example:
+.. _signal-example:
 
 .. code-block:: JavaScript
     :caption: in: "acquisition.json"
 
     {
-        "type":         "Signal",
-        "role":         "behavior",
-        "dimension":    "calcium",
+        "type":         "Sampled",
+        "role":         "indicator",
+        "quality":      "calcium",
         "values":       { "type": "number" },
         "generated-by": { "$ref": "setups.json#postdoc-room/components/probe" },
         "monitored-by": { "$ref": "setups.json#postdoc-room/components/photodiode" },
-        "description":  "the calcium signal taken from the surface probe of the participant."
+        "description":  "the calcium signal read from the surface probe of the participant."
     }
 
-You can check representative subclasses of :py:class:`Quality`: see :doc:`quality` for details.
+You can check representative subclasses of :py:class:`Signal`: see :doc:`signal` for details.
 
-.. py:class:: Quality
+.. py:class:: Signal
 
     the root class of all the classes related to qualitative existence.
 
@@ -136,11 +136,11 @@ You can check representative subclasses of :py:class:`Quality`: see :doc:`qualit
         a required ``string`` property referring to what role it plays in the context
         of this physiology experiment.
 
-        Must be one of: ``"command"``, ``"behavior"``, ``"configuration"``.
+        Must be one of: ``"command"``, ``"indicator"``, ``"configuration"``.
 
-    .. py:attribute:: dimension
+    .. py:attribute:: quality
 
-        a required ``string`` property describing the physical dimension that
+        a required ``string`` property describing the physical quality that
         this signal is supposed to reflect.
 
         The exact vocabulary shall be ontologically defined elsewhere, but possibly
@@ -150,23 +150,23 @@ You can check representative subclasses of :py:class:`Quality`: see :doc:`qualit
 
         a required property that holds a :py:class:`Spatial` entity, or a reference to it.
         If there are multiple entities, a list of :py:class:`Spatial` entities may be used.
-        This property indicates what spatial existence generates/emits this quality.
+        This property indicates what spatial existence generates/emits this signal.
 
     .. py:attribute:: monitored-by
 
         a required property that holds a :py:class:`Spatial` entity, or a reference to it.
         If there are multiple entities, a list of :py:class:`Spatial` entities may be used.
-        This property indicates what spatial existence monitors/reads this quality.
+        This property indicates what spatial existence monitors/reads this signal.
 
     .. py:attribute:: values
 
         a required ``object`` property to describe what algebraic values
-        this :py:class:`Quality` must hold.
+        this :py:class:`Signal` must hold.
 
         For representing numeric definitions, you can use a JSON Schema-related
         representation such as ``{ "type": "number", "minimum": 0.0 }``.
 
-        If this :py:class:`Quality` holds an enumerative values,
+        If this :py:class:`Signal` holds an enumerative values,
         you can give a mapping here e.g.
 
         .. code-block:: JavaScript
@@ -185,17 +185,17 @@ You can check representative subclasses of :py:class:`Quality`: see :doc:`qualit
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
-The quality underlying each :py:class:`Quality` entity is represented ontologically.
+The quality underlying each :py:class:`Signal` entity is represented ontologically.
 
 Programs and Routines
 ^^^^^^^^^^^^^^^^^^^^^
 
-A :py:class:`Routine` class is capable of reading/holding/writing :py:class:`Quality`,
+A :py:class:`Routine` class is capable of reading/holding/writing :py:class:`Signal`,
 and of storing data in a certain format.
 
 A :py:class:`Program` controls one :py:class:`Routine` or more, and
 it normally resides in a certain :py:class:`Spatial` entity
-(e.g. a PC or a microcontroller) that in turn reads or writes :py:class:`Quality` entities.
+(e.g. a PC or a microcontroller) that in turn reads or writes :py:class:`Signal` entities.
 
 The format of data files is described using a :py:class:`DataFile` instance.
 
@@ -247,8 +247,8 @@ An example :py:class:`Program` entity would look like below:
         a required property that holds a :py:class:`Spatial` entity.
         This represents the "hardware" part of the program.
 
-        For this :py:class:`Program` to process a certain :py:class:`Quality`,
-        this :py:class:`Quality` must be monitored / read by the :py:class:`Spatial`
+        For this :py:class:`Program` to process a certain :py:class:`Signal`,
+        this :py:class:`Signal` must be monitored / read by the :py:class:`Spatial`
         entity that runs the :py:class:`Program`.
 
     .. py:attribute:: routines
@@ -283,12 +283,12 @@ An example :py:class:`Program` entity would look like below:
 
     .. py:attribute:: reads
 
-        a required property that holds a reference to a :py:class:`Quality` instance
+        a required property that holds a reference to a :py:class:`Signal` instance
         this routine uses.
 
     .. py:attribute:: generates
 
-        a required property that holds a reference to a :py:class:`Quality` instance
+        a required property that holds a reference to a :py:class:`Signal` instance
         this routine generates.
 
     .. py:attribute:: stores

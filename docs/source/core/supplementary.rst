@@ -7,4 +7,4 @@ Supplementary documents
 
    spatial
    temporal
-   quality
+   signal
