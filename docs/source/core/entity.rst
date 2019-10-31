@@ -111,7 +111,13 @@ An example entry for a :py:class:`Signal` entity looks like below:
         "type":         "Sampled",
         "role":         "indicator",
         "quality":      "calcium",
-        "values":       { "type": "number" },
+        "range":        { "type": "number" },
+        "rate":         {
+            "type": "number",
+            "precision": 3,
+            "value":     "100",
+            "unit":      "Hz"
+        }
         "generated-by": { "$ref": "setups.json#postdoc-room/components/probe" },
         "monitored-by": { "$ref": "setups.json#postdoc-room/components/photodiode" },
         "description":  "the calcium signal read from the surface probe of the participant."
@@ -158,7 +164,7 @@ You can check representative subclasses of :py:class:`Signal`: see :doc:`signal`
         If there are multiple entities, a list of :py:class:`Spatial` entities may be used.
         This property indicates what spatial existence monitors/reads this signal.
 
-    .. py:attribute:: values
+    .. py:attribute:: range
 
         a required ``object`` property to describe what algebraic values
         this :py:class:`Signal` must hold.
@@ -171,7 +177,7 @@ You can check representative subclasses of :py:class:`Signal`: see :doc:`signal`
 
         .. code-block:: JavaScript
 
-            {
+            "range": {
                 "high": {
                     "description": "TTL-high"
                 },

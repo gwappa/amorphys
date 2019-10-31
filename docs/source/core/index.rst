@@ -9,7 +9,8 @@ The three key concepts in ``amorphys`` are:
 2. **Relationship**: represents a relationship between two Entity instances.
 3. **Context**: represents a group of Entities and Relationships.
 
-In addition, :doc:`referrable` is defined to facilitate annotation.
+In addition, several supportive classes are defined to facilitate annotation;
+refer to :doc:`referrable` and :doc:`scientific`.
 
 .. toctree::
    :maxdepth: 2
@@ -18,5 +19,6 @@ In addition, :doc:`referrable` is defined to facilitate annotation.
    entity
    relationship
    context
+   scientific
    referrable
    supplementary

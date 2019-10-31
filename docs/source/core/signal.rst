@@ -11,7 +11,8 @@ Signal entity
 
 .. py:class:: Sampled
 
-    for signal that is continuously sampled
+    for signal that is continuously sampled.
+    An example of :py:class:`Sampled` may be found :ref:`here <signal-example>`.
 
     .. py:attribute:: type
 
@@ -42,15 +43,35 @@ Signal entity
         a required property indicating what spatial existence monitors/reads this signal,
         as it is inherited from :py:class:`Signal`.
 
-    .. py:attribute:: values
+    .. py:attribute:: range
 
         a required ``object`` property to describe what algebraic values
         this signal must hold, as it is inherited from :py:class:`Signal`.
+
+    .. py:attribute:: rate
+
+        a required :py:class:`Quantity` property to specify the sampling rate
+        of this signal.
 
     .. py:attribute:: reference
 
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
+
+There are several pre-defined subclasses.
+Although most physiology experiments (except for brain-imaging studies) can
+be described using the ones below, it is going to be possible at some point
+to define your own subclasses, too.
+
+Scan
+^^^^
+
+:py:class:`Scan` is a subclass that represents loops of scans.
+
+This class is the base class for "scanning"-type sampling methods as a whole.
+There are more common, usage-dependent sub-classes such as :py:class:`LineScan`,
+:py:class:`Video`, and :py:class:`Volume`, so it is recommended to use them
+if your use case falls into one of them.
 
     .. note::
 
