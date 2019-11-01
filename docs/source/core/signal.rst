@@ -245,8 +245,6 @@ Event
 
     .. admonition:: TODO
 
-        add an example, and describe subclasses
-
         Image: image acquisition: needs size
 
 State
