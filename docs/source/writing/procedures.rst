@@ -16,8 +16,20 @@ Procedures
 A typical "procedures" section looks like the one below:
 
 .. code-block:: JavaScript
+    :caption: in: "procedures.json"
 
-    (TODO)
+    {
+        "$schema": ".../amorphys.json#properties/procedures",
+        "$description": "experimental procedures for each subject in the foraging project.",
+
+        "phases": {
+            ...
+        },
+
+        "order": {
+            ...
+        }
+    }
 
 .. py:class:: procedures
 

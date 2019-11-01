@@ -6,6 +6,125 @@ The following classes are used to represent values related to measurements.
 .. contents:: Contents
     :local:
 
+Date
+----
+
+.. py:class:: Date
+
+    :py:class:`Date` is used for representation of dates.
+    This is for extending the conventional ``date`` object of JSON.
+
+    for example, you can represent the date in several different formats:
+
+    .. code-block:: JavaScript
+        :caption: The following objects represent the same date
+
+        {
+            "format": "%Y-%m-%d",
+            "value":  "2019-01-22"
+        },
+
+        {
+            "format": "%d/%m/%y",
+            "value":  "22/01/19"
+        }
+
+    .. py:attribute:: format
+
+        a required ``string`` property used for how to parse the :py:attr:`value` field.
+
+        In principle, the field names follow the specifications in the UNIX command ``date``.
+        The following fields are allowed for the moment:
+
+        ====== =====================
+        Field  Description
+        ====== =====================
+        ``%Y`` a 4-digit year field
+        ``%y`` a 2-digit year field
+        ``%m`` a 2-digit month field
+        ``%d`` a 2-digit date field
+        ====== =====================
+
+        Other than the fields above, the following special characters can be used:
+
+        - ``-`` (hyphen)
+        - ``,`` (comma)
+        - ``.`` (period)
+        - ``/`` (slash)
+        - `` `` (space)
+
+        .. caution::
+
+        	A warning may be raised if the format does _not_ contain all of year/month/day fields.
+
+    .. py:attribute:: value
+
+        the date value, in the format specified in :py:attr:`format`.
+        If the value does not conform to :py:attr:`format`, an error will be generated.
+
+Time
+----
+
+.. py:class:: Time
+
+    :py:class:`Time` is used for representation of dates.
+    This is for extending the conventional ``time`` object of JSON.
+
+    for example, you can represent the date in several different formats:
+
+    .. code-block:: JavaScript
+        :caption: Examples of Time instances
+
+        {
+            "format": "%H-%M-%S",
+            "value":  "09-25-22"
+        },
+
+        {
+            "format": "%H:%M",
+            "value":  "09:25"
+        }
+
+    .. py:attribute:: format
+
+        a required ``string`` property used for how to parse the :py:attr:`value` field.
+
+        In principle, the field names follow the specifications in the UNIX command ``date``.
+        The following fields are allowed for the moment:
+
+        ====== ========================================================
+        Field  Description
+        ====== ========================================================
+        ``%H`` a 2-digit 24-hour field
+        ``%M`` a 2-digit minute field
+        ``%S`` a 2-digit second field
+        ``%f`` a field representing subsecond time (up to microseconds)
+        ====== ========================================================
+
+        Other than the fields above, the following special characters can be used:
+
+        - ``:`` (colon)
+        - ``-`` (hyphen)
+        - ``,`` (comma)
+        - ``.`` (period)
+        - ``/`` (slash)
+        - `` `` (space)
+
+        In case the finer scales are not specified (e.g. having only ``%H`` and ``%M``,
+        and not the others), having zeros for them is assumed.
+        For example, if you format ``"09:50"`` with the formatter ``"%H:%M"``,
+        you can expect to represent either ``"09:50:00"`` or ``"09:50:00.000000"``,
+        depending on the runtime.
+
+        .. caution::
+
+        	You cannot format a value only consisting of e.g. ``%H`` and ``%S``, and skipping ``%M``.
+
+    .. py:attribute:: value
+
+        the date value, in the format specified in :py:attr:`format`.
+        If the value does not conform to :py:attr:`format`, an error will be generated.
+
 Space
 -----
 

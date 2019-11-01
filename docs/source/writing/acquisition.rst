@@ -32,6 +32,10 @@ A typical :py:class:`acquisition` section would look like below:
         ]
     }
 
+.. caution::
+
+	Note that, during actual acquisitions, not all the programs may be run. In other words, you can list as many programs as you can imagine in the `programs` field.
+
 .. py:class:: acquisition
 
     The ``acquisition`` section of ``amorphys`` is a subclass of :py:class:`section`.

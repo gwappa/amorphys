@@ -20,12 +20,37 @@ Procedure
     :py:class:`Procedure` is a subclass of :py:class:`Temporal`,
     and represents any type of experimental procedure.
 
-    .. admonition:: TODO
+    .. py:attribute:: type
 
-        - type: required
-        - date: required (but nullable), date format (inherits from parent)
-        - start-time, stop-time: optional, time format
-        - description: required
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+        This field must hold ``"Proedure"`` or the name of one of its subclasses.
+
+    .. py:attribute:: description
+
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+
+    .. py:attribute:: date
+
+        a required :py:class:`Date` property specifying the date of this procedure.
+
+        Usually, the value for this property holds a reference to a variable, as the date
+        of the procedure varies across subjects and/or sessions.
+
+        Although it is possible to assign ``null`` to this property in some rare cases,
+        it is not recommended to do so.
+
+    .. py:attribute:: start-time
+
+        an optional :py:class:`Time` property specifying the starting time of this procedure.
+
+    .. py:attribute:: end-time
+
+        an optional :py:class:`Time` property specifying the ending time of this procedure.
+
+    .. py:attribute:: reference
+
+        an optional ``string`` or ``[ string ]`` property inherited as an
+        :py:class:`Entity` instance.
 
 Action and Block
 ----------------
@@ -41,23 +66,78 @@ abstract class.
     :py:class:`Action` is a subclass of :py:class:`Procedure`,
     and represents an elemental procedural action.
 
-    .. admonition:: TODO
+    .. py:attribute:: type
 
-        inherits attributes from :py:class:`Procedure`:
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+        This field must hold ``"Action"`` or the name of one of its subclasses.
+
+    .. py:attribute:: description
+
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+
+    .. py:attribute:: date
+
+        a required :py:class:`Date` property specifying the date of this action,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: start-time
+
+        an optional :py:class:`Time` property specifying the starting time of this action,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: end-time
+
+        an optional :py:class:`Time` property specifying the ending time of this action,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: reference
+
+        an optional ``string`` or ``[ string ]`` property inherited as an
+        :py:class:`Entity` instance.
 
 .. py:class:: Block
 
     :py:class:`Block` is a subclass of :py:class:`Procedure`,
     and consists of a group of Procedures.
 
-    .. admonition:: TODO
+    .. py:attribute:: type
 
-        in addition to that of :py:class:`Procedure`:
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+        This field must hold ``"Action"`` or the name of one of its subclasses.
 
-        - items
-        - order
-        - procedures:  array of Procedures, required
-        - order:       array of relationships between elemental procedures, required
+    .. py:attribute:: description
+
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+
+    .. py:attribute:: date
+
+        a required :py:class:`Date` property specifying the date of this block of procedures,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: procedures
+
+        a required array consisting of :py:class:`Procedure` objects (can contain none),
+        specifying the list of sub-procedures in this block of procedures.
+
+    .. py:attribute:: order
+
+        a required array consisting of temporal :py:class:`Relationship` objects (can contain none),
+        specifying the order of individual sub-procedures in this block.
+
+    .. py:attribute:: start-time
+
+        an optional :py:class:`Time` property specifying the starting time of this block of procedures,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: end-time
+
+        an optional :py:class:`Time` property specifying the ending time of this block of procedures,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: reference
+
+        an optional ``string`` or ``[ string ]`` property inherited as an
+        :py:class:`Entity` instance.
 
 Phase
 -----
@@ -68,12 +148,48 @@ For an example, refer to :ref:`this section <procedures-example>`.
 
     :py:class:`Phase` is a subclass of :py:class:`Block` (i.e. a group of procedures),
     and represents a operational phase, or an experimental session
-    consisting of one experimental procedure or more.
+    consisting of one experimental procedure or more..
 
-    .. admonition:: TODO
+    .. py:attribute:: type
 
-    	- attributes are inherited
-        - warning occurs if "date" is null
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+        This field must hold ``"Action"`` or the name of one of its subclasses.
+
+    .. py:attribute:: description
+
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+
+    .. py:attribute:: date
+
+        a required :py:class:`Date` property specifying the date of this block of procedures,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: procedures
+
+        a required array consisting of :py:class:`Procedure` objects (can contain none),
+        specifying the list of sub-procedures in this block of procedures.
+        This is a property inherited from :py:class:`Block`.
+
+    .. py:attribute:: order
+
+        a required array consisting of temporal :py:class:`Relationship` objects (can contain none),
+        specifying the order of individual sub-procedures in this block.
+        This is a property inherited from :py:class:`Block`.
+
+    .. py:attribute:: start-time
+
+        an optional :py:class:`Time` property specifying the starting time of this block of procedures,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: end-time
+
+        an optional :py:class:`Time` property specifying the ending time of this block of procedures,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: reference
+
+        an optional ``string`` or ``[ string ]`` property inherited as an
+        :py:class:`Entity` instance.
 
 Acquisition
 -----------
@@ -87,9 +203,41 @@ with specific acquisition/setup configurations.
 
     a subclass of :py:class:`Action`.
 
-    .. admonition:: TODO
+    .. py:attribute:: type
 
-    	in addition to attributes in :py:class:`Action`:
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+        This field must hold ``"Action"`` or the name of one of its subclasses.
 
-        - setup: reference to a :py:class:`Setup` entity
-        - task:  reference to a :py:class:`Task` entity
+    .. py:attribute:: description
+
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+
+    .. py:attribute:: date
+
+        a required :py:class:`Date` property specifying the date of this action,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: setup
+
+        a required :py:class:`Setup` property representing what setup is used
+        for acquisition.
+
+    .. py:attribute:: sequencer
+
+        an optional :py:class:`Sequencer` property for better describing
+        what task/protocol/sequence is used during this acquisition.
+
+    .. py:attribute:: start-time
+
+        an optional :py:class:`Time` property specifying the starting time of this action,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: end-time
+
+        an optional :py:class:`Time` property specifying the ending time of this action,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: reference
+
+        an optional ``string`` or ``[ string ]`` property inherited as an
+        :py:class:`Entity` instance.
