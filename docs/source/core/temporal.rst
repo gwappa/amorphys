@@ -1,5 +1,5 @@
-List of subclasses for Temporal
-===============================
+Predefined subclasses for Temporal
+==================================
 
 Representative classes of the :py:class:`Temporal` class are described below.
 An example can be found :ref:`here <procedures-example>`.
@@ -20,9 +20,7 @@ Procedure
     :py:class:`Procedure` is a subclass of :py:class:`Temporal`,
     and represents any type of experimental procedure.
 
-    .. note::
-
-    	TODO:
+    .. topic:: TODO
 
         - type: required
         - date: required (but nullable), date format (inherits from parent)
@@ -43,18 +41,18 @@ abstract class.
     :py:class:`Action` is a subclass of :py:class:`Procedure`,
     and represents an elemental procedural action.
 
-    .. note::
+    .. topic:: TODO
 
-        TODO: inherits attributes from :py:class:`Procedure`:
+        inherits attributes from :py:class:`Procedure`:
 
 .. py:class:: Block
 
     :py:class:`Block` is a subclass of :py:class:`Procedure`,
     and consists of a group of Procedures.
 
-    .. note::
+    .. topic:: TODO
 
-        TODO: in addition to that of :py:class:`Procedure`:
+        in addition to that of :py:class:`Procedure`:
 
         - items
         - order
@@ -72,10 +70,10 @@ For an example, refer to :ref:`this section <procedures-example>`.
     and represents a operational phase, or an experimental session
     consisting of one experimental procedure or more.
 
-    .. note::
+    .. topic:: TODO
 
-    	TODO: attributes are inherited
-        warning occurs if "date" is null
+    	- attributes are inherited
+        - warning occurs if "date" is null
 
 Acquisition
 -----------
@@ -89,9 +87,9 @@ with specific acquisition/setup configurations.
 
     a subclass of :py:class:`Action`.
 
-    .. note::
+    .. topic:: TODO
 
-    	TODO: in addition to attributes in :py:class:`Action`:
+    	in addition to attributes in :py:class:`Action`:
 
         - setup: reference to a :py:class:`Setup` entity
         - task:  reference to a :py:class:`Task` entity

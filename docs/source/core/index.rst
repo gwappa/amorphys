@@ -19,6 +19,6 @@ refer to :doc:`referrable` and :doc:`scientific`.
    entity
    relationship
    context
-   scientific
+   measurements
    referrable
    supplementary

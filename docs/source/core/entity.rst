@@ -108,19 +108,22 @@ An example entry for a :py:class:`Signal` entity looks like below:
     :caption: in: "acquisition.json"
 
     {
-        "type":         "Sampled",
-        "role":         "indicator",
-        "quality":      "calcium",
-        "range":        { "type": "number" },
-        "rate":         {
+        "type":          "Sampled",
+        "role":          "indicator",
+        "quality":       "calcium",
+        "size":          {
+            "shape":     [1],
+        },
+        "range":         { "type": "number" },
+        "sampling-rate": {
             "type": "number",
             "precision": 3,
             "value":     "100",
             "unit":      "Hz"
         }
-        "generated-by": { "$ref": "setups.json#postdoc-room/components/probe" },
-        "monitored-by": { "$ref": "setups.json#postdoc-room/components/photodiode" },
-        "description":  "the calcium signal read from the surface probe of the participant."
+        "generated-by":  { "$ref": "setups.json#postdoc-room/components/probe" },
+        "monitored-by":  { "$ref": "setups.json#postdoc-room/components/photodiode" },
+        "description":   "the calcium signal read from the surface probe of the participant."
     }
 
 You can check representative subclasses of :py:class:`Signal`: see :doc:`signal` for details.

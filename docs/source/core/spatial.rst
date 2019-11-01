@@ -1,5 +1,5 @@
-List of subclasses for Spatial
-==============================
+Predefined subclasses for Spatial
+=================================
 
 Representative classes of the :py:class:`Spatial` class are described below.
 
@@ -61,9 +61,9 @@ Subclasses of Subject
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
-    .. note::
+    .. topic:: TODO
 
-        TODO: add property details
+        add property details
 
 .. py:class::  Participant
 
@@ -86,9 +86,9 @@ Subclasses of Subject
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
-    .. note::
+    .. topic:: TODO
 
-        TODO: add property details??
+        add property details??
 
 .. py:class:: Tissue
 
@@ -117,9 +117,9 @@ Subclasses of Subject
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
-    .. note::
+    .. topic:: TODO
 
-        TODO: add property details
+        add property details
 
 Component entity
 ----------------
@@ -261,9 +261,9 @@ Apparatus and its related classes
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
-    .. note::
+    .. topic:: TODO
 
-        TODO: how to add any configurational parameter(s) for an Apparatus?
+        how to add any configurational parameter(s) for an Apparatus?
 
 .. py:class:: Device
 
