@@ -12,6 +12,12 @@ Welcome to amorphys!
 "amorphys" stands for "asymptotic metadata organization in physiology",
 whatever it means.
 
+.. note::
+
+    Although most of the documents are too technical and unfriendly to researchers,
+    please take a look at :doc:`objectives` and :doc:`overview` to make a grasp of
+    why it is important.
+
 ``amorphys`` is part of the `physiology data organization project <https://physiology-data-organization.readthedocs.io/>`_
 (`project page <https://github.com/gwappa/physiology-data-organization>`_).
 
