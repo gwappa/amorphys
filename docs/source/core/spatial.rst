@@ -61,7 +61,7 @@ Subclasses of Subject
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
-    .. topic:: TODO
+    .. admonition:: TODO
 
         add property details
 
@@ -86,7 +86,7 @@ Subclasses of Subject
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
-    .. topic:: TODO
+    .. admonition:: TODO
 
         add property details??
 
@@ -117,7 +117,7 @@ Subclasses of Subject
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
-    .. topic:: TODO
+    .. admonition:: TODO
 
         add property details
 
@@ -261,7 +261,7 @@ Apparatus and its related classes
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
-    .. topic:: TODO
+    .. admonition:: TODO
 
         how to add any configurational parameter(s) for an Apparatus?
 

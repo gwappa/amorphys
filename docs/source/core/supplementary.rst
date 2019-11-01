@@ -8,3 +8,4 @@ Supplementary documents
    spatial
    temporal
    signal
+   defining-class

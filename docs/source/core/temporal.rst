@@ -20,7 +20,7 @@ Procedure
     :py:class:`Procedure` is a subclass of :py:class:`Temporal`,
     and represents any type of experimental procedure.
 
-    .. topic:: TODO
+    .. admonition:: TODO
 
         - type: required
         - date: required (but nullable), date format (inherits from parent)
@@ -41,7 +41,7 @@ abstract class.
     :py:class:`Action` is a subclass of :py:class:`Procedure`,
     and represents an elemental procedural action.
 
-    .. topic:: TODO
+    .. admonition:: TODO
 
         inherits attributes from :py:class:`Procedure`:
 
@@ -50,7 +50,7 @@ abstract class.
     :py:class:`Block` is a subclass of :py:class:`Procedure`,
     and consists of a group of Procedures.
 
-    .. topic:: TODO
+    .. admonition:: TODO
 
         in addition to that of :py:class:`Procedure`:
 
@@ -70,7 +70,7 @@ For an example, refer to :ref:`this section <procedures-example>`.
     and represents a operational phase, or an experimental session
     consisting of one experimental procedure or more.
 
-    .. topic:: TODO
+    .. admonition:: TODO
 
     	- attributes are inherited
         - warning occurs if "date" is null
@@ -87,7 +87,7 @@ with specific acquisition/setup configurations.
 
     a subclass of :py:class:`Action`.
 
-    .. topic:: TODO
+    .. admonition:: TODO
 
     	in addition to attributes in :py:class:`Action`:
 

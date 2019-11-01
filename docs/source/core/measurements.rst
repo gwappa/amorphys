@@ -1,9 +1,9 @@
-Class for measurements
-======================
+Classes for measurements
+========================
 
 The following classes are used to represent values related to measurements.
 
-..contents:: Contents
+.. contents:: Contents
     :local:
 
 Space
@@ -97,7 +97,8 @@ For example, the following entry is used to describe "30.0 Hz":
 Notes on unit usages
 --------------------
 
-Although it is up to the users to use any arbitrary units in the ``"unit"`` field,
-it is recommended to use one of widely accepted and commonly used units.
+.. caution::
+    Although it is up to the users to use any arbitrary units in the ``"unit"`` field,
+    it is recommended to use one of widely accepted and commonly used units.
 
-As an example, refer to `this guide by International Astronomical Union (IAU) <https://www.iau.org/publications/proceedings_rules/units/>`_.
+    As an example, refer to `this guide by International Astronomical Union (IAU) <https://www.iau.org/publications/proceedings_rules/units/>`_.

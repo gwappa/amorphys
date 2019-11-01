@@ -117,13 +117,9 @@ if your use case falls into one of them.
         For a :py:class:`Scan` entity, this property probably holds a single-dimensional
         :py:class:`Space` instance.
 
-        .. note::
+        .. caution::
 
-        	The current specification assumes that the number of pixels/voxels
-            does not change dynamically during acquisition.
-
-            If it changes from run to run, or during individual runs,
-            consider holding this value as a variable.
+        	The current specification assumes that the number of pixels or voxels does not change dynamically during acquisition. If it changes from run to run, or during individual runs, consider holding this value as a variable.
 
     .. py:attribute:: generated-by
 
@@ -181,12 +177,12 @@ as what :py:class:`Scan` has, but a certain meaning is added in terms of ontolog
     a subclass of :py:class:`Scan` used to represent video acquisition.
     For properties, refer to :py:class:`Scan`.
 
-    The :py:attr:`size` property must hold a :py:class:`Space` with more than
+    The :py:attr:`size <Scan.size>` property must hold a :py:class:`Space` with more than
     two-dimensional. For example, the standard color videography will have
     three dimensions (i.e. width, height, and 3 color channels).
 
-    Note that, in the case of "standard" videography, :py:attr:`sampling-rate`
-    can be the same as :py:attr:`scan-rate`, as it makes no sense to define
+    Note that, in the case of "standard" videography, :py:attr:`sampling-rate <Scan.sampling-rate>`
+    can be the same as :py:attr:`scan-rate <Scan.scan-rate>`, as it makes no sense to define
     the pixel-sampling rate (or pixel dwell-time, as it may be important for
     scanning microscopy).
 
@@ -247,7 +243,7 @@ Event
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
-    .. topic:: TODO
+    .. admonition:: TODO
 
         add an example, and describe subclasses
 
@@ -308,6 +304,6 @@ State
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
-    .. topic:: TODO
+    .. admonition:: TODO
 
         add an example
