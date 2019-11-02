@@ -23,10 +23,60 @@ A typical "procedures" section looks like the one below:
         "$description": "experimental procedures for each subject in the foraging project.",
 
         "phases": {
-            ...
+
+            "surgery": {
+                "type":        "Phase",
+                "description": "preparation of the animal before training begins, including probe implant.",
+
+                "date":        { "$ref": "variables.json#subject/surgery-date" },
+                "procedures":  [
+                    {
+                        "type": "ketamine-xylazine-anesthesia",
+                        "description": "Ket/Xyl anesthesia"
+                    },
+                    {
+                        "type":          "ChronicPreparation",
+                        "description":   "surface probe implant",
+                        "manipulations": [
+                            {
+                                "@context":          "https://.../amorphys-manipulation",
+                                "@id":               { "$ref": "materials.json#components/probe" },
+                                "implanted-to":      { "$ref": "materials.json#subject" },
+                                "on-the-surface-of": { "$ref": "materials.json#subject/ROI/frontal-lobe" },
+                                "by-means-of":       {
+                                    ...
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            
+            "session": {
+                "type":  "array",
+                "items": {
+                    "type":        "Phase",
+                    "description": "a behavioral session in the post-doc room.",
+
+                    "date":        { "$ref": "variables.json#sessions/session/session-date" },
+                    "procedures": [
+                        {
+                            "type":        "Acquisition",
+                            "description": "acquisition from the surface probe",
+                            "setup":       { "$ref": "setups.json#postdoc-room" },
+                            "task":        { "$ref": "tasks.json#foraging-task" }
+                        }
+                    ]
+                }
+            }
         },
 
         "order": {
+            {
+                "@context": "https://.../amorphys-temporal",
+                "@id":      { "$ref": "../phases/session" },
+                "after":    { "$ref": "../phases/surgery" }
+            },
             ...
         }
     }

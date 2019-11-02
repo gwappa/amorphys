@@ -25,7 +25,7 @@ A typical :py:class:`setups` section would look like below:
             "description": "the setup for investigation of human foraging behavior.",
 
             "components": {
-                "subject": { "$ref": "variables.json#participants/subject" },
+                "subject": { "$ref": "materials.json#subject" },
                 "KeisukesDesk": {
                     ...
                 },

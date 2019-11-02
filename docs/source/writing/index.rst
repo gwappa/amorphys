@@ -9,6 +9,7 @@ Here, metadata formatting in ``amorphys`` is described.
 
    overview
    organization
+   materials
    setups
    acquisition
    procedures

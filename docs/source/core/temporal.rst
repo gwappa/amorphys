@@ -31,13 +31,11 @@ Procedure
 
     .. py:attribute:: date
 
-        a required :py:class:`Date` property specifying the date of this procedure.
+        an optional (but recommended) :py:class:`Date` property
+        specifying the date of this procedure.
 
         Usually, the value for this property holds a reference to a variable, as the date
         of the procedure varies across subjects and/or sessions.
-
-        Although it is possible to assign ``null`` to this property in some rare cases,
-        it is not recommended to do so.
 
     .. py:attribute:: start-time
 
@@ -46,6 +44,11 @@ Procedure
     .. py:attribute:: end-time
 
         an optional :py:class:`Time` property specifying the ending time of this procedure.
+
+    .. py:attribute:: setup
+
+        an optional (but recommended) :py:class:`Setup` property representing
+        what setup is used for this procedure.
 
     .. py:attribute:: reference
 
@@ -90,6 +93,11 @@ abstract class.
         an optional :py:class:`Time` property specifying the ending time of this action,
         as it is inherited from :py:class:`Procedure`.
 
+    .. py:attribute:: setup
+
+        an optional (but recommended) :py:class:`Setup` property representing
+        what setup is used for this action, as it is inherited from :py:class:`Procedure`.
+
     .. py:attribute:: reference
 
         an optional ``string`` or ``[ string ]`` property inherited as an
@@ -103,7 +111,7 @@ abstract class.
     .. py:attribute:: type
 
         a required ``string`` property inherited as an :py:class:`Entity` instance.
-        This field must hold ``"Action"`` or the name of one of its subclasses.
+        This field must hold ``"Block"`` or the name of one of its subclasses.
 
     .. py:attribute:: description
 
@@ -121,7 +129,7 @@ abstract class.
 
     .. py:attribute:: order
 
-        a required array consisting of temporal :py:class:`Relationship` objects (can contain none),
+        an optional array consisting of temporal :py:class:`Relationship` objects,
         specifying the order of individual sub-procedures in this block.
 
     .. py:attribute:: start-time
@@ -133,6 +141,14 @@ abstract class.
 
         an optional :py:class:`Time` property specifying the ending time of this block of procedures,
         as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: setup
+
+        an optional (but recommended) :py:class:`Setup` property representing
+        what setup is used for this block, as it is inherited from :py:class:`Procedure`.
+
+        If the setup differs between individual child procedures in this block,
+        the :py:attr:`setup` property may be better described there.
 
     .. py:attribute:: reference
 
@@ -153,7 +169,7 @@ For an example, refer to :ref:`this section <procedures-example>`.
     .. py:attribute:: type
 
         a required ``string`` property inherited as an :py:class:`Entity` instance.
-        This field must hold ``"Action"`` or the name of one of its subclasses.
+        This field must hold ``"Phase"`` or the name of one of its subclasses.
 
     .. py:attribute:: description
 
@@ -172,7 +188,7 @@ For an example, refer to :ref:`this section <procedures-example>`.
 
     .. py:attribute:: order
 
-        a required array consisting of temporal :py:class:`Relationship` objects (can contain none),
+        an optional array consisting of temporal :py:class:`Relationship` objects,
         specifying the order of individual sub-procedures in this block.
         This is a property inherited from :py:class:`Block`.
 
@@ -186,18 +202,40 @@ For an example, refer to :ref:`this section <procedures-example>`.
         an optional :py:class:`Time` property specifying the ending time of this block of procedures,
         as it is inherited from :py:class:`Procedure`.
 
+    .. py:attribute:: setup
+
+        an optional (but recommended) :py:class:`Setup` property representing
+        what setup is used during this phase, as it is inherited from :py:class:`Procedure`.
+
+        If the setup differs between individual child procedures in this block,
+        the :py:attr:`setup` property may be better described there.
+
     .. py:attribute:: reference
 
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
+Specific types of actions
+-------------------------
+
+Anesthesia
+^^^^^^^^^^
+
+.. admonition:: TODO
+
+    describe what this is:
+
+    - content: material used, probably with concentration
+    - route: i.p., s.c., etc.
+
+
 Acquisition
------------
+^^^^^^^^^^^
 
 For an example, refer to :ref:`this section <procedures-example>`.
 
 Acquisition allows to link an :py:class:`Action` entity (i.e. an atomic procedure)
-with specific acquisition/setup configurations.
+with specific acquisition configurations.
 
 .. py:class:: Acquisition
 
@@ -206,7 +244,7 @@ with specific acquisition/setup configurations.
     .. py:attribute:: type
 
         a required ``string`` property inherited as an :py:class:`Entity` instance.
-        This field must hold ``"Action"`` or the name of one of its subclasses.
+        This field must hold ``"Acquisition"`` or the name of one of its subclasses.
 
     .. py:attribute:: description
 
@@ -216,11 +254,6 @@ with specific acquisition/setup configurations.
 
         a required :py:class:`Date` property specifying the date of this action,
         as it is inherited from :py:class:`Procedure`.
-
-    .. py:attribute:: setup
-
-        a required :py:class:`Setup` property representing what setup is used
-        for acquisition.
 
     .. py:attribute:: sequencer
 
@@ -236,6 +269,60 @@ with specific acquisition/setup configurations.
 
         an optional :py:class:`Time` property specifying the ending time of this action,
         as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: setup
+
+        an optional (but recommended) :py:class:`Setup` property representing
+        what setup is used for this action, as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: reference
+
+        an optional ``string`` or ``[ string ]`` property inherited as an
+        :py:class:`Entity` instance.
+
+ChronicPreparation
+^^^^^^^^^^^^^^^^^^
+
+Introduction or removal of some component from the subject.
+
+.. py:class:: ChronicPreparation
+
+    a subclass of :py:class:`Action`.
+
+    .. py:attribute:: type
+
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+        This field must hold ``"ChronicPreparation"`` or the name of one of its subclasses.
+
+    .. py:attribute:: description
+
+        a required ``string`` property inherited as an :py:class:`Entity` instance.
+
+    .. py:attribute:: date
+
+        a required :py:class:`Date` property specifying the date of this action,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: manipulations
+
+        a required array with manipulation-related :py:class:`Relationship`
+        describing what material is introduced to / removed from the subject,
+        with what parameters / coordinates.
+
+    .. py:attribute:: start-time
+
+        an optional :py:class:`Time` property specifying the starting time of this action,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: end-time
+
+        an optional :py:class:`Time` property specifying the ending time of this action,
+        as it is inherited from :py:class:`Procedure`.
+
+    .. py:attribute:: setup
+
+        an optional (but recommended) :py:class:`Setup` property representing
+        what setup is used for this action, as it is inherited from :py:class:`Procedure`.
 
     .. py:attribute:: reference
 

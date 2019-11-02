@@ -21,6 +21,10 @@ whatever it means.
 ``amorphys`` is part of the `physiology data organization project <https://physiology-data-organization.readthedocs.io/>`_
 (`project page <https://github.com/gwappa/physiology-data-organization>`_).
 
+.. admonition:: TODO
+
+    change organization for better navigation
+
 .. toctree::
    :maxdepth: 3
    :caption: Table of contents:
