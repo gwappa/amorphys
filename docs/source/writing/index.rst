@@ -13,3 +13,5 @@ Here, metadata formatting in ``amorphys`` is described.
    setups
    acquisition
    procedures
+   tasks
+   variables

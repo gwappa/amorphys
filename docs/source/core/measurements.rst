@@ -125,6 +125,35 @@ Time
         the date value, in the format specified in :py:attr:`format`.
         If the value does not conform to :py:attr:`format`, an error will be generated.
 
+Subject-related
+---------------
+
+Age
+^^^
+
+.. admonition:: TODO
+
+    specify how to represent age of an animal, a participant, or a tissue.
+
+
+Sex
+^^^
+
+.. admonition:: TODO
+
+    specify how to represent the sex (M/F/others?) of an animal or a participant.
+
+Death
+^^^^^
+
+.. admonition:: TODO
+
+    specify:
+
+    - date of death
+    - cause of death
+    - method of sacrifice
+
 Space
 -----
 

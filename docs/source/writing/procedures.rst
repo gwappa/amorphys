@@ -40,9 +40,9 @@ A typical "procedures" section looks like the one below:
                         "manipulations": [
                             {
                                 "@context":          "https://.../amorphys-manipulation",
-                                "@id":               { "$ref": "materials.json#components/probe" },
+                                "@id":               { "$ref": "materials.json#core-materials/probe" },
                                 "implanted-to":      { "$ref": "materials.json#subject" },
-                                "on-the-surface-of": { "$ref": "materials.json#subject/ROI/frontal-lobe" },
+                                "on-the-surface-of": { "$ref": "materials.json#subject/composition/frontal-lobe" },
                                 "by-means-of":       {
                                     ...
                                 }
@@ -51,7 +51,7 @@ A typical "procedures" section looks like the one below:
                     }
                 ]
             },
-            
+
             "session": {
                 "type":  "array",
                 "items": {

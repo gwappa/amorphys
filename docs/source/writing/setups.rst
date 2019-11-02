@@ -46,7 +46,7 @@ A typical :py:class:`setups` section would look like below:
         }
     }
 
-(refer to ``variables`` for what ``participants/subject`` refers to)
+(refer to :doc:`materials` for what ``subject`` refers to)
 
 .. py:class:: setups
 

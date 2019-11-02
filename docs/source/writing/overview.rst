@@ -14,8 +14,8 @@ The ``amorphys`` metadata format consists of the following distinct sections:
 3. the ":doc:`setups <setups>`" section, describing **spatial organization of each setup**
 4. the ":doc:`acquisition <acquisition>`" section, describing **programs and channels on each setup**
 5. the ":doc:`procedures <procedures>`" section, describing **experimental procedures for each subject**
-6. the "tasks" section, describing the **task/protocol controls**
-7. the "variables" section, describing the **experimental conditions and variables**
+6. the ":doc:`tasks <tasks>`" section, describing the **task/protocol controls**
+7. the ":doc:`variables <variables>`" section, describing the **experimental conditions and variables**
 
 In principle, the six sections are independent from each other:
 **you can only implement some of them while leaving the others unimplemented**,

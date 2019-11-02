@@ -26,10 +26,13 @@ Entity class
 
     .. py:attribute:: reference
 
-        an optional ``string`` or ``[ string ]`` property that contains the URL(s)
-        related to this Entity instance. It can start with, for example,
-        ``https://`` (in case the reference is a web page), or with ``doi:``
-        (in case it is described elsewhere with a DOI).
+        an optional property consisting of a ``string`` or an array of ``[ string ]``,
+        containing the URL(s) related to this Entity instance.
+
+        It can start with, for example:
+        - ``https://`` (in case the reference is a web page)
+        - ``RRID:`` (in case it is a type of research material)
+        - ``doi:`` (in case it is described elsewhere with a DOI)
 
 Types of entities
 -----------------
@@ -58,6 +61,12 @@ You can check representative subclasses of :py:class:`Spatial`: see :doc:`spatia
     .. py:attribute:: description
 
         a required ``string`` property inherited as an :py:class:`Entity` instance.
+
+    .. py:attribute:: composition
+
+        an optional property holding a :py:class:`Spatial` or an array of them.
+        This property is used to represent a "part-of" relationship between
+        :py:class:`Spatial` objects.
 
     .. py:attribute:: reference
 

@@ -26,11 +26,20 @@ Subject entity
 
         a required ``string`` property inherited as an :py:class:`Entity` instance.
 
+    .. py:attribute:: age
+
+        a required :py:class:`Age` property indicating the age of this :py:class:`Subject`.
+
     .. py:attribute:: license
 
         a required property representing a license term or more that is
         related to this subject e.g. the license for the animal experiment,
         or the informed consent conditions with the human experiment.
+
+    .. py:attribute:: composition
+
+        an optional property holding a :py:class:`Spatial` or an array of them,
+        as it is inherited from :py:class:`Spatial`.
 
     .. py:attribute:: reference
 
@@ -52,9 +61,32 @@ Subclasses of Subject
 
         a required ``string`` property inherited as an :py:class:`Entity` instance.
 
+    .. py:attribute:: species-strain
+
+        a required :py:class:`Strain` property indicating the species and strain
+        of this :py:class:`Animal`.
+
+    .. py:attribute:: age
+
+        a required :py:class:`Age` property, as it is inherited from :py:class:`Subject`.
+
+    .. py:attribute:: sex
+
+        a required :py:class:`Sex` property of this :py:class:`Animal`.
+
+    .. py:attribute:: death
+
+        a required :py:class:`Death` property, indicating when and how this
+        :py:class:`Animal` died.
+
     .. py:attribute:: license
 
-        the required license-term property, inherited from :py:class:`Subject`.
+        a required license-term property, inherited from :py:class:`Subject`.
+
+    .. py:attribute:: composition
+
+        an optional property holding a :py:class:`Spatial` or an array of them,
+        as it is inherited from :py:class:`Spatial`.
 
     .. py:attribute:: reference
 
@@ -63,7 +95,7 @@ Subclasses of Subject
 
     .. admonition:: TODO
 
-        add property details
+        is it better having a property indicating "experiment-specific"?
 
 .. py:class::  Participant
 
@@ -77,9 +109,22 @@ Subclasses of Subject
 
         a required ``string`` property inherited as an :py:class:`Entity` instance.
 
+    .. py:attribute:: age
+
+        a required :py:class:`Age` property, as it is inherited from :py:class:`Subject`.
+
+    .. py:attribute:: sexuality
+
+        a required :py:class:`Sexuality` property of this :py:class:`Participant`.
+
     .. py:attribute:: license
 
-        the required license-term property, inherited from :py:class:`Subject`.
+        a required license-term property, inherited from :py:class:`Subject`.
+
+    .. py:attribute:: composition
+
+        an optional property holding a :py:class:`Spatial` or an array of them,
+        as it is inherited from :py:class:`Spatial`.
 
     .. py:attribute:: reference
 
@@ -108,9 +153,18 @@ Subclasses of Subject
         a required property referring to the :py:class:`Animal` or the :py:class:`Participant`
         where this :py:class:`Tissue` instance originates from.
 
+    .. py:attribute:: age
+
+        a required :py:class:`Age` property, as it is inherited from :py:class:`Subject`.
+
     .. py:attribute:: license
 
         the required license-term property, inherited from :py:class:`Subject`.
+
+    .. py:attribute:: composition
+
+        an optional property holding a :py:class:`Spatial` or an array of them,
+        as it is inherited from :py:class:`Spatial`.
 
     .. py:attribute:: reference
 
@@ -142,6 +196,11 @@ Component entity
         an optional (but recommended) property referring to an :py:class:`Individual`
         who supplied this :py:class:`Material` instance.
 
+    .. py:attribute:: composition
+
+        an optional property holding a :py:class:`Spatial` or an array of them,
+        as it is inherited from :py:class:`Spatial`.
+
     .. py:attribute:: reference
 
         an optional ``string`` or ``[ string ]`` property inherited as an
@@ -171,6 +230,11 @@ Material and its related classes
 
         an optional (but recommended) property inherited from :py:class:`Component`.
 
+    .. py:attribute:: composition
+
+        an optional property holding a :py:class:`Spatial` or an array of them,
+        as it is inherited from :py:class:`Spatial`.
+
     .. py:attribute:: reference
 
         an optional ``string`` or ``[ string ]`` property inherited as an
@@ -192,6 +256,11 @@ Material and its related classes
     .. py:attribute:: supplier
 
         an optional (but recommended) property inherited from :py:class:`Component`.
+
+    .. py:attribute:: composition
+
+        an optional property holding a :py:class:`Spatial` or an array of them,
+        as it is inherited from :py:class:`Spatial`.
 
     .. py:attribute:: reference
 
@@ -224,6 +293,11 @@ Material and its related classes
     .. py:attribute:: supplier
 
         an optional (but recommended) property inherited from :py:class:`Component`.
+
+    .. py:attribute:: composition
+
+        an optional property holding a :py:class:`Spatial` or an array of them,
+        as it is inherited from :py:class:`Spatial`.
 
     .. py:attribute:: reference
 
@@ -260,6 +334,11 @@ Apparatus and its related classes
 
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
+
+    .. py:attribute:: composition
+
+        an optional property holding a :py:class:`Spatial` or an array of them,
+        as it is inherited from :py:class:`Spatial`.
 
     .. admonition:: TODO
 
@@ -302,6 +381,11 @@ Apparatus and its related classes
 
         an optional property consisting of a reference, or a list of references,
         to a :py:class:`Program` instance or more.
+
+    .. py:attribute:: composition
+
+        an optional property holding a :py:class:`Spatial` or an array of them,
+        as it is inherited from :py:class:`Spatial`.
 
     .. py:attribute:: reference
 
