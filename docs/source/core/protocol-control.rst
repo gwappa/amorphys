@@ -26,6 +26,61 @@ responses from the subject), then the use of :py:class:`StateMachine` would be a
 Variable parameters, such as stimulus strengths and durations, may be
 represented in terms of :py:class:`variable`.
 
+StimulusState
+-------------
+
+.. py:class:: StimulusState
+
+    :py:class:`StimulusState` represents a state of stimulus output
+    during a certain period of time, and comprises the basis of protocol specification.
+
+    .. py:attribute:: mode
+
+        the mode of the output. May be one of the followings:
+
+        =========== ============================================================== ===================================================
+        Mode        Related properties                                             Description
+        =========== ============================================================== ===================================================
+        "constant"  :py:attr:`amplitude`                                           a constant (rectangular) output
+        "rect-wave" :py:attr:`amplitude`, :py:attr:`frequency`, :py:attr:`offset`  a sine-wave output with a certain frequency
+        "sine-wave" :py:attr:`amplitude`, :py:attr:`frequency`, :py:attr:`offset`  a rectangular-wave output with a certain frequency
+        =========== ============================================================== ===================================================
+
+        .. note::
+
+            In cases where e.g. amplitude changes over time during a :py:class:`StimulusBlock`: the output values is supposed to be represented by an :py:class:`expression`.
+
+    .. py:attribute:: amplitude
+
+        an optional (but recommended) property except for the "ramp" mode,
+        representing the height of the output, in terms of the corresponding :py:class:`Quality` instance.
+
+        For the wave-type modes, this indicates the *peak-to-peak* amplitude:
+        the output range from ``offset - amplitude/2`` to ``offset + amplitude/2``.
+
+        This property will be ignored for the "ramp" mode.
+
+    .. py:attribute:: pulse
+
+        an optional property for describing a pulse-like output,
+        in terms of the corresponding :py:class:`Quality` instance.
+
+        If this property is set, it is assumed that the output only lasts for :py:attr:`pulse` long.
+
+    .. py:attribute:: offset
+
+        an optional (but recommended) property for the wave-type modes,
+        representing the offset (center) of the wave, in terms of the corresponding :py:class:`Quality` instance.
+
+        This property will be ignored for the non wave-type modes.
+
+    .. py:attribute:: frequency
+
+        an optional (but recommended) property for the wave-type modes,
+        representing the frequency of the wave, in terms of the corresponding :py:class:`Quality` instance.
+
+        This property will be ignored for the non wave-type modes.
+
 Sequence-type stimulus description
 ----------------------------------
 
@@ -55,9 +110,47 @@ Sequencer
 StimulusBlock
 ^^^^^^^^^^^^^
 
-.. admonition:: TODO
+.. py:class:: StimulusBlock
 
-    define and describe how to write
+    :py:class:`StimulusBlock` specifies a certain period during the stimulus sequence
+    where the states of output stimuli stays constant.
+
+    It can hold a mapping of :py:class:`StimulusGeneration` instances as :py:attr:`channels`.
+
+    .. py:attribute:: description
+
+        a required ``string`` property, for a human-readable description of
+        what takes place during this :py:class:`StimulusBlock`.
+
+    .. py:attribute:: duration
+
+        a required property holding a temporal :py:class:`Quality`,
+        representing the duration of this :py:class:`StimulusBlock`.
+
+    .. py:attribute:: output
+
+        an optional mapping from a stimulus identifier to a corresponding :py:class:`StimulusGeneration`,
+        indicating what stimulus is generated during this :py:class:`StimulusBlock`.
+
+    .. caution::
+
+        Unlike the case of :py:class:`MachineState`, this property is *memory-less* i.e. if no :py:class:`StimulusGeneration` instance is specified for a channel during this :py:class:`StimulusBlock`, **this channel is assumed to output nothing (e.g. 0 V or GND) during the block**, no matter how you specified during the previous block.
+
+StimulusGeneration
+^^^^^^^^^^^^^^^^^^
+
+.. py:class:: StimulusGeneration
+
+    :py:class:`StimulusGeneration` represents a certain state of output
+    from a channel.
+
+    .. py:attribute:: channel
+
+        a required :py:class:`Signal` property that holds where the output comes out of.
+
+    .. py:attribute:: state
+
+        a required :py:class:`StimulusState` property describing the output.
 
 
 Context-dependent stimulus sequence
@@ -122,16 +215,28 @@ MachineState
         an optional array of :py:class:`StimulusState` objects, describing
         what stimulus is turned on/off upon end of this state.
 
+    .. caution::
+
+    	Unlike the case of :py:class:`StimulusBlock`, :py:attr:`on-start` and :py:attr:`on-end` has persisting effects i.e. once you set a :py:class:`StimulusState` inside a :py:class:`MachineState`, **the output state will not be cleared** unless you explicitly do so.
+
 MachineStateTransition
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. admonition:: TODO
+.. py:class:: MachineStateTransition
 
-    describe how to write
+    :py:class:`MachineStateTransition` represents a mapping between an incoming
+    event and its corresponding target state.
 
-StimulusState
-^^^^^^^^^^^^^
+    .. py:attribute:: event
 
-.. admonition:: TODO
+        a required property hondling a :py:class:`Event` or the string ``"$timeout"``,
+        representing the event input required for this state transition to occur.
 
-    define and describe how to write
+        Note that the string ``"$timeout"`` refers to the state-timeout event.
+
+    .. py:attribute:: target
+
+        a required property hondling a :py:class:`MachineState` or the string ``"$terminate"``,
+        representing the next, target state of this state transition.
+
+        Note that the string ``"$terminate"`` refers to the termination of the state machine.
