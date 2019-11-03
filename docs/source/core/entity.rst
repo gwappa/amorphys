@@ -309,6 +309,11 @@ An example :py:class:`Program` entity would look like below:
         a required property that holds a reference to a :py:class:`Signal` instance
         this routine generates.
 
+    .. py:attribute:: protocol
+
+        an optional :py:class:`ProtocolControl` property representing, if exists,
+        the :doc:`protocol for stimulation <protocol-control>`.
+
     .. py:attribute:: stores
 
         an optional mapping that maps the identifiers of the data files

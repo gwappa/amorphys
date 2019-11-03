@@ -13,7 +13,18 @@ A typical :py:class:`materials` section would look like below:
     :caption: in: "materials.json"
 
     {
-        ...(TODO)...
+        "subject": {
+            "type": "Participant",
+            "description": "the participant to our foraging-behavior experiments",
+            ...
+        },
+
+        "core-materials": {
+            "probe": {
+                "type": "Device",
+                ...
+            }
+        }
     }
 
 Note that the paths such as ``materials.json#subject`` may be referred to from
