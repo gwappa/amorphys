@@ -4,6 +4,9 @@ Description of protocol control
 Here, it is described as to how to abstract your stimulus-response sequence (i.e. protocol)
 during acquisition.
 
+In case of behavioral tasks, in particular, the description of protocol-control is paired
+with the description of :doc:`behavioral-model` in the :doc:`tasks <../writing/tasks>` section.
+
 Currently, it does not belong anywhere in the tree of entities
 for the sake of simplicity in notation.
 
@@ -26,8 +29,11 @@ responses from the subject), then the use of :py:class:`StateMachine` would be a
 Variable parameters, such as stimulus strengths and durations, may be
 represented in terms of :py:class:`variable`.
 
+Unitary stimulus control
+------------------------
+
 StimulusState
--------------
+^^^^^^^^^^^^^
 
 .. py:class:: StimulusState
 
@@ -81,6 +87,27 @@ StimulusState
 
         This property will be ignored for the non wave-type modes.
 
+ApparatusState
+^^^^^^^^^^^^^^
+
+During manipulation of apparatus in the behavioral setup, in particular,
+it is easier for a human being to understand if the state of control is written not by
+the voltage/current outputs but by the actions executed by the apparatus.
+
+:py:class:`ApparatusState` is used in such cases where it is simpler to describe
+the outputs in terms of apparatus actions.
+
+.. py:class:: ApparatusState
+
+    this is a sort of :py:class:`Restriction`, describing the controls over
+    the apparatus of interest. The predicate part is ontologically defined
+    through ``amorphys-control``.
+
+    .. admonition:: TODO
+
+        some example ApparatusState
+
+
 Sequence-type stimulus description
 ----------------------------------
 
@@ -102,6 +129,11 @@ Sequencer
 
         a required ``string`` property, for a human-readable description of
         what this :py:class:`Sequencer` class is for.
+
+    .. py:attribute:: run-by
+
+        an optional (but recommended) :py:class:`Program` instance,
+        indicating the program that runs this sequence.
 
     .. py:attribute:: sequence
 
@@ -150,7 +182,8 @@ StimulusGeneration
 
     .. py:attribute:: state
 
-        a required :py:class:`StimulusState` property describing the output.
+        a required property consisting of a :py:class:`StimulusState` or
+        a :py:class:`ApparatusState`, describing the output.
 
 
 Context-dependent stimulus sequence
@@ -172,6 +205,11 @@ StateMachine
 
         a required ``string`` property, for a human-readable description of
         what this :py:class:`StateMachine` class is for.
+
+    .. py:attribute:: run-by
+
+        an optional (but recommended) :py:class:`Program` instance,
+        indicating the program that runs this state machine.
 
     .. py:attribute:: initial
 
@@ -207,13 +245,13 @@ MachineState
 
     .. py:attribute:: on-start
 
-        an optional array of :py:class:`StimulusState` objects, describing
-        what stimulus is turned on/off upon start of this state.
+        an optional array of :py:class:`StimulusState` or :py:class:`ApparatusState` objects,
+        describing what stimulus is turned on/off upon start of this state.
 
     .. py:attribute:: on-end
 
-        an optional array of :py:class:`StimulusState` objects, describing
-        what stimulus is turned on/off upon end of this state.
+        an optional array of :py:class:`StimulusState` or :py:class:`ApparatusState` objects,
+        describing what stimulus is turned on/off upon end of this state.
 
     .. caution::
 
@@ -227,7 +265,7 @@ MachineStateTransition
     :py:class:`MachineStateTransition` represents a mapping between an incoming
     event and its corresponding target state.
 
-    .. py:attribute:: event
+    .. py:attribute:: source
 
         a required property hondling a :py:class:`Event` or the string ``"$timeout"``,
         representing the event input required for this state transition to occur.

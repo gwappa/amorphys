@@ -22,5 +22,6 @@ refer to :doc:`referrable`, :doc:`measurements`, :doc:`protocol-control` and :do
    measurements
    referrable
    protocol-control
+   behavioral-model
    variable
    supplementary
