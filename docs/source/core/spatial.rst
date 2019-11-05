@@ -36,10 +36,27 @@ Subject entity
         related to this subject e.g. the license for the animal experiment,
         or the informed consent conditions with the human experiment.
 
-    .. py:attribute:: composition
+    .. py:attribute:: parts
 
         an optional property holding a :py:class:`Spatial` or an array of them,
         as it is inherited from :py:class:`Spatial`.
+
+    .. py:attribute:: implants
+
+        an optional mapping property from names to :py:class:`Component` instances,
+        describing what additional :py:class:`Component` instances are implanted,
+        before or during experiments, to this :py:class:`Subject`.
+
+
+        Possible :py:class:`Component` entities include:
+
+        - implanted components (head-posts, cannula, chronic windows etc.)
+        - materials that are chronically introduced into the body (chronic drug admin., virus injection etc.)
+
+        .. caution:: Note the difference
+            Note the difference between :py:attr:`implants` and :py:attr:`parts`: :py:attr:`parts` refers to elements that are *by definition* part of the
+            subject, whereas :py:attr:`implants` refers to those that are *added*
+            in relation to (most likely, for the sake of) the experiment.
 
     .. py:attribute:: reference
 
@@ -83,7 +100,7 @@ Subclasses of Subject
 
         a required license-term property, inherited from :py:class:`Subject`.
 
-    .. py:attribute:: composition
+    .. py:attribute:: parts
 
         an optional property holding a :py:class:`Spatial` or an array of them,
         as it is inherited from :py:class:`Spatial`.
@@ -121,7 +138,7 @@ Subclasses of Subject
 
         a required license-term property, inherited from :py:class:`Subject`.
 
-    .. py:attribute:: composition
+    .. py:attribute:: parts
 
         an optional property holding a :py:class:`Spatial` or an array of them,
         as it is inherited from :py:class:`Spatial`.
@@ -161,7 +178,7 @@ Subclasses of Subject
 
         the required license-term property, inherited from :py:class:`Subject`.
 
-    .. py:attribute:: composition
+    .. py:attribute:: parts
 
         an optional property holding a :py:class:`Spatial` or an array of them,
         as it is inherited from :py:class:`Spatial`.
@@ -196,7 +213,7 @@ Component entity
         an optional (but recommended) property referring to an :py:class:`Individual`
         who supplied this :py:class:`Material` instance.
 
-    .. py:attribute:: composition
+    .. py:attribute:: parts
 
         an optional property holding a :py:class:`Spatial` or an array of them,
         as it is inherited from :py:class:`Spatial`.
@@ -230,7 +247,7 @@ Material and its related classes
 
         an optional (but recommended) property inherited from :py:class:`Component`.
 
-    .. py:attribute:: composition
+    .. py:attribute:: parts
 
         an optional property holding a :py:class:`Spatial` or an array of them,
         as it is inherited from :py:class:`Spatial`.
@@ -257,7 +274,7 @@ Material and its related classes
 
         an optional (but recommended) property inherited from :py:class:`Component`.
 
-    .. py:attribute:: composition
+    .. py:attribute:: parts
 
         an optional property holding a :py:class:`Spatial` or an array of them,
         as it is inherited from :py:class:`Spatial`.
@@ -294,7 +311,7 @@ Material and its related classes
 
         an optional (but recommended) property inherited from :py:class:`Component`.
 
-    .. py:attribute:: composition
+    .. py:attribute:: parts
 
         an optional property holding a :py:class:`Spatial` or an array of them,
         as it is inherited from :py:class:`Spatial`.
@@ -335,7 +352,7 @@ Apparatus and its related classes
         an optional ``string`` or ``[ string ]`` property inherited as an
         :py:class:`Entity` instance.
 
-    .. py:attribute:: composition
+    .. py:attribute:: parts
 
         an optional property holding a :py:class:`Spatial` or an array of them,
         as it is inherited from :py:class:`Spatial`.
@@ -382,7 +399,7 @@ Apparatus and its related classes
         an optional property consisting of a reference, or a list of references,
         to a :py:class:`Program` instance or more.
 
-    .. py:attribute:: composition
+    .. py:attribute:: parts
 
         an optional property holding a :py:class:`Spatial` or an array of them,
         as it is inherited from :py:class:`Spatial`.

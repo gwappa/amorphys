@@ -62,7 +62,7 @@ You can check representative subclasses of :py:class:`Spatial`: see :doc:`spatia
 
         a required ``string`` property inherited as an :py:class:`Entity` instance.
 
-    .. py:attribute:: composition
+    .. py:attribute:: parts
 
         an optional property holding a :py:class:`Spatial` or an array of them.
         This property is used to represent a "part-of" relationship between

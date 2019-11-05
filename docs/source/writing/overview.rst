@@ -10,7 +10,7 @@ Sections
 The ``amorphys`` metadata format consists of the following distinct sections:
 
 1. the ":doc:`organization <organization>`" section, describing **project organization**
-2. the ":doc:`materials <materials>`" section, describing the **core materials** used throughout an experiment.
+2. the ":doc:`subjects <subjects>`" section, describing the **subjects of interest** used throughout an experiment.
 3. the ":doc:`setups <setups>`" section, describing **spatial organization of each setup**
 4. the ":doc:`acquisition <acquisition>`" section, describing **programs and channels on each setup**
 5. the ":doc:`procedures <procedures>`" section, describing **experimental procedures for each subject**
