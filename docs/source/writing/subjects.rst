@@ -14,6 +14,7 @@ A typical :py:class:`materials` section would look like below:
 
     {
         "$schema": "https://.../amorphis.json#subject",
+        "$description": "description of subjects for the foraging-behavior experiments.",
 
         "participant": {
             "type": "Participant",

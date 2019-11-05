@@ -53,7 +53,8 @@ Subject entity
         - implanted components (head-posts, cannula, chronic windows etc.)
         - materials that are chronically introduced into the body (chronic drug admin., virus injection etc.)
 
-        .. caution:: Note the difference
+        .. caution::
+
             Note the difference between :py:attr:`implants` and :py:attr:`parts`: :py:attr:`parts` refers to elements that are *by definition* part of the
             subject, whereas :py:attr:`implants` refers to those that are *added*
             in relation to (most likely, for the sake of) the experiment.
