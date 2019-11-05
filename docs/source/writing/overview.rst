@@ -21,8 +21,49 @@ In principle, the six sections are independent from each other:
 **you can only implement some of them while leaving the others unimplemented**,
 if you are fine with this way.
 
+A recommended way of annotation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you start annotating in ``amorphys`` from scratch, here is a recommended way.
+Note that **you can modify or expand the descriptions at any time**.
+
+If you are unsure about anything along the way, do not hesitate to write only partially
+and go on to the next step without fully fill in the previous one
+(a nice version-control system will help in any case).
+
+1. Write the :doc:`organization <organization>` section:
+
+    - *what is the name of the project?*
+    - *who are involved in the project, with what funding source(s)?*
+
+2. Write the :doc:`subjects <subjects>` section, whilst adding some subject-specific
+   variables in the :doc:`variables <variables>` section:
+
+    - *what subject is used in the experiments?*
+    - *in particular, which part of the subject is of interest?*
+
+3. Write the :doc:`procedures <procedures>` section, whilst adding some phase-specific
+   variables in the :doc:`variables <variables>` section:
+
+    - *in what order are manipulations and perturbations made?*
+
+4. Write the :doc:`setups <setups>` section:
+
+    - *on each setup, what components are there in what layout?*
+
+5. Write the :doc:`acquisition <acquisition>` section:
+
+    - *what type of signals are recorded and generated?*
+    - *how do the programs make use of them?*
+    - *what kind of data files are generated during each acquisition?*
+
+6. Write the :doc:`tasks <tasks>` section, whilst adding further variables in the
+   :doc:`variables <variables>` section:
+
+    - *how are the setup and the subject modeled to interact with each other?*
+
 "section" class
----------------
+^^^^^^^^^^^^^^^
 
 .. py:class:: section
 

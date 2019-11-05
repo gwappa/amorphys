@@ -22,7 +22,8 @@ or ``testing`` as its value.
     {
         "$variable": {
             "type":  { "enum": "pairing", "testing" }
-        }
+        },
+        "description": "the mode of the task."
     }
 
 Another example below describes an array of values taking any number above zero:
@@ -36,7 +37,8 @@ Another example below describes an array of values taking any number above zero:
                 "type":    "number",
                 "minimum": 0
             }
-        }
+        },
+        "description": "array of time points when the participant started examining the place."
     }
 
 .. py:class:: variable
@@ -50,6 +52,10 @@ Another example below describes an array of values taking any number above zero:
 
         holds a valid schema based on `JSON Schema <https://json-schema.org/>`_,
         but it may typically be a schema for a ``string`` or a ``number``.
+
+    .. py:attribute:: description
+
+        a required human-readable description about what this variable stands for.
 
 .. _condition-example:
 
@@ -73,7 +79,8 @@ just like the ``switch`` statement in C, C++ and related languages.
                 "value": 1
             }
         ],
-        "default": 0
+        "default": 0,
+        "description": "the task mode-dependent output value returned from Arduino."
     }
 
 In the above example, depending on the ``string`` variable being held at ``/variable/task-mode``,
@@ -92,6 +99,10 @@ and ``0`` otherwise.
     .. py:attribute:: $condition
 
         holds a reference to the variable.
+
+    .. py:attribute:: description
+
+        a required human-readable description about what this variable stands for.
 
     .. py:attribute:: switch
 
@@ -122,7 +133,8 @@ Below is an example of a formatter:
         "$expression": "{{ x }}\*2 + 3",
         "where": {
             "x": { "$ref": "/variables/x" }
-        }
+        },
+        "description": "the amplitude depends on the value of x."
     }
 
 In the example above, if ``x`` evaluates to the number ``1``, for example,
@@ -137,7 +149,8 @@ Another example provides another way of expressing a condition:
         "where": {
             "x": { "$ref": "/variable1" },
             "y": { "$ref": "/variable2" }
-        }
+        },
+        "description": "the condition depends on whether or not x and y are equal."
     }
 
 In this case, the whole formatter is evaluated to either ``true`` or ``false``,
@@ -179,6 +192,10 @@ the values where you need:
 
         the expression to be evaluated.
         Each appearance of variable names must be wrapped inside doubled curly braces.
+
+    .. py:attribute:: description
+
+        a required human-readable description about what this variable stands for.
 
     .. py:attribute:: where
 
