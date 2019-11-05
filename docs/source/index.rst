@@ -21,6 +21,8 @@ whatever it means.
 ``amorphys`` is part of the `physiology data organization project <https://physiology-data-organization.readthedocs.io/>`_
 (`project page <https://github.com/gwappa/physiology-data-organization>`_).
 
+.. image:: https://zenodo.org/badge/doi/10.5281/zenodo.3529681.svg
+
 .. admonition:: TODO
 
     change organization for better navigation

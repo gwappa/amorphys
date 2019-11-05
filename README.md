@@ -2,6 +2,8 @@
 
 "amorphys" stands for "asymptotic metadata organization in physiology", whatever it means.
 
+![DOI: 10.5281/zenodo.3529681](https://zenodo.org/badge/doi/10.5281/zenodo.3529681.svg)
+
 This repository consists of:
 
 - The manuscript for the [amorphys documentation](https://amorphys-documentation.readthedocs.io/).
