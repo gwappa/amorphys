@@ -10,7 +10,7 @@
         },
         "uri": {
             "$comment": "a string representing the URI-based ID of this object. Can be null (but not recommended), if this \"referrable\" does not have any ID (although it may sound paradoxical).",
-            "type": "string"
+            "$ref": "uri.json"
         }
     },
     "required": [ "name", "uri" ]

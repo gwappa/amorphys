@@ -7,8 +7,7 @@
         {
             "properties": {
                 "uri": {
-                    "type": "string",
-                    "pattern": "^https://"
+                    "$ref": "uri.json#definitions/default"
                 }
             }
         }

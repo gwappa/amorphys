@@ -20,6 +20,9 @@
                     "$comment": "a string representing the contact information of this person. It is recommended to contain the e-mail address of the person here, but it can be the mailing address, too. This field can well be null if this person does not have, or is not willing to share, a contact.",
 
                     "type": "string"
+                },
+                "uri": {
+                    "$ref": "uri.json#definitions/orcid"
                 }
             },
 

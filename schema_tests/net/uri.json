@@ -1,0 +1,16 @@
+{
+    "valid": [
+        "https://www.google.com/",
+        "http://www.yahoo.co.jp",
+        "ORCID:0000-0000-0000",
+        "RRID:SCR_1264",
+        "DOI:10.1264/222222",
+        "doi:10.1264/222222"
+    ],
+    "invalid": [
+        "ftp://invalid.net",
+        "mailto:kkkeeeiiisssuuukkkeee@chaos-software.cc",
+        "orcid:0000-0000-0000",
+        "rrid:SCR_1264"
+    ]
+}

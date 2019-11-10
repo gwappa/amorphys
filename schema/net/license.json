@@ -20,6 +20,10 @@
 
                     "type":    "string",
                     "pattern": "[0-9]{4}-?([0-9]{4})?"
+                },
+
+                "uri": {
+                    "$ref": "uri.json#definitions/default"
                 }
             },
 
