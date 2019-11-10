@@ -1,0 +1,39 @@
+{
+    "$schema":  "http://json-schema.org/schema#",
+    "$comment": "a section that describes general project organization",
+
+    "allOf": [
+        { "$ref": "section.json" },
+        
+        {
+            "properties": {
+                "dataset": { "$ref": "../misc/dataset.json" },
+                "people":  {
+                    "type": "object",
+                    "^[A-Za-z_][A-Za-z0-9_]*$": { "$ref": "../net/contributor.json" }
+                },
+                "affiliations": {
+                    "type": "object",
+                    "^[A-Za-z_][A-Za-z0-9_]*$": { "$ref": "../net/institution.json" }
+                },
+                "funded_by": {
+                    "type": "object",
+                    "^[A-Za-z_][A-Za-z0-9_]*$": { "$ref": "../misc/funding.json" }
+                },
+                "data_published_by": {
+                    "type": "array",
+                    "items": { "$ref": "../net/contributor.json" },
+                    "minItems": 1
+                }
+            },
+
+            "required": [
+                "dataset",
+                "people",
+                "affiliations",
+                "funded_by",
+                "data_published_by"
+            ]
+        }
+    ]
+}
