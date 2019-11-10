@@ -23,14 +23,14 @@ but it may be substituted later if there exists any structure general enough to 
 Referrable class
 ----------------
 
-.. py:class:: Referrable
+.. py:class:: referrable
 
     the base class being used to refer to anything "referrable" on the web.
     Both :py:attr:`name` and :py:attr:`uri` properties are required.
 
     .. py:attribute:: name
 
-        a human-readable ``string`` description of this object.
+        a human-readable ``string`` name of this object.
 
     .. py:attribute:: uri
 
@@ -44,23 +44,23 @@ Individual class
 ----------------
 
 Any individuals (people, institutions, companies etc.) being referred to through the URI,
-are represented by the :py:class:`Individual` class.
+are represented by the :py:class:`individual` class.
 
-For reference to a person, in particular, the :py:class:`Person` class is used.
+For reference to a person, in particular, the :py:class:`person` class is used.
 
-.. py:class:: Individual
+.. py:class:: individual
 
-    a subclass of :py:class:`Referrable` being used to identify any individuals
+    a subclass of :py:class:`referrable` being used to identify any individuals
     (people, institutions, companies etc.).
 
     .. py:attribute:: name
 
-        a required property inherited from :py:attr:`Referrable.name`.
+        a required property inherited from :py:attr:`referrable.name`.
         It would typically reflect what would appear as the "full-name" on the web pages.
 
     .. py:attribute:: uri
 
-        a required property inherited from :py:attr:`Referrable.uri`.
+        a required property inherited from :py:attr:`referrable.uri`.
 
         - for an institution/company: the URL for its website (starting with ``https://``)
         - for a person: the ORCID (starting with ``ORCID:``)
@@ -70,19 +70,19 @@ For reference to a person, in particular, the :py:class:`Person` class is used.
 Person class
 ------------
 
-.. py:class:: Person
+.. py:class:: person
 
-    a subclass of :py:class:`Individual` being used to refer to a person.
+    a subclass of :py:class:`individual` being used to refer to a person.
     All of the properties described below are necessary.
 
     .. py:attribute:: name
 
-        inherited from :py:attr:`Individual.name`.
+        inherited from :py:attr:`individual.name`.
         The full name as it would appear on the web pages.
 
     .. py:attribute:: uri
 
-        inherited from :py:attr:`Individual.uri`.
+        inherited from :py:attr:`individual.uri`.
         The ORCID (a ``string`` starting with ``ORCID:``) of this person.
 
     .. py:attribute:: lastname
@@ -110,11 +110,11 @@ Person class
 License class
 -------------
 
-.. py:class:: License
+.. py:class:: license
 
     a class being used to represent a license type of the subject being described.
 
-    For example, a CC0-license may be represented using :py:class:`License` as follows:
+    For example, a CC0-license may be represented using :py:class:`license` as follows:
 
     .. code-block:: JavaScript
 
@@ -125,16 +125,16 @@ License class
             "authors": { "$ref": "/organization/people" }
         }
 
-    a ``License`` object must have properties below:
+    a ``license`` object must have properties below:
 
     .. py:attribute:: name
 
-        equivalent to :py:attr:`Referrable.name`.
+        equivalent to :py:attr:`referrable.name`.
         It represents the shorthand of the license e.g. "CC0", "MIT", "GPL2".
 
     .. py:attribute:: uri
 
-        equivalent to :py:attr:`Referrable.uri`.
+        equivalent to :py:attr:`referrable.uri`.
         It may be the terms and conditions representing this license.
 
     .. py:attribute:: authors
@@ -150,16 +150,16 @@ License class
 Citation class
 --------------
 
-.. py:class:: Citation
+.. py:class:: citation
 
-    a subclass of :py:class:`Referrable` being used to refer to a unique article on the web.
+    a subclass of :py:class:`referrable` being used to refer to a unique article on the web.
 
-    For example, a citation may be described using :py:class:`Citation` as follows:
+    For example, a citation may be described using :py:class:`citation` as follows:
 
     .. code-block:: JavaScript
 
         {
-            "reference-type": "is-supplement-to",
+            "reference_type": "is-supplement-to",
             "name": "Sehara K, Colomb J, Larkum ME (2019) Dendritic mechanisms underlying foraging behavior of human subjects.",
             "uri": "doi:10.1101/000000"
         }
@@ -177,13 +177,15 @@ Citation class
         It represents the URI of the article, and may start either
         with ``https://`` or with ``doi:``, depending on the type of the article.
 
-    .. py:attribute:: reference-type
+    .. py:attribute:: reference_type
 
         a ``string`` representing how this citation works.
         valid types may be found below:
 
-        ================ ======================================================================
+        ================ =======================================================================
         type             description
-        ================ ======================================================================
-        is-supplement-to used when the subject being described is a supplement to the citation.
-        ================ ======================================================================
+        ================ =======================================================================
+        is-supplement-to this citation is based on the dataset being described.
+        is-described-by  this citation describes how the dataset being described was generated.
+        is-referenced-by this citation refers to this dataset, but neither of the above applies.
+        ================ =======================================================================
