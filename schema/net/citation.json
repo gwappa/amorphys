@@ -16,6 +16,14 @@
                         "is-described-by",
                         "is-referenced-by"
                     ]
+                },
+
+                "uri": {
+                    "$comment": "for a citation, the URI must start either from \"https://\" or \"doi:\"",
+                    "oneOf": [
+                        { "type": "string", "pattern": "^https://" },
+                        { "type": "string", "pattern": "^[dD][Oo][Ii]:" }
+                    ]
                 }
             }
         }

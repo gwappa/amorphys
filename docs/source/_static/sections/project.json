@@ -1,0 +1,42 @@
+{
+    "$schema":      "https://.../sections/project.json"
+    "description": "the project organization for foraging experiment",
+
+    "dataset": {
+        "name": "HumanForagingBehavior_PostdocRoom",
+        ...
+    },
+
+    "people": {
+        "Keisuke": {
+            "name": "Keisuke S.K. Sehara",
+            ...
+        },
+        "Julien": {
+            "name": "Julien Colomb",
+            ...
+        },
+        ...
+    },
+
+    "affiliations": {
+        "ChaosSoftware": {
+            "name": "Chaos Software",
+            ...
+        },
+        ...
+    },
+
+    "funded_by": {
+        "DFG": {
+            "name": "Deutliche Forschungsgesellschaft",
+            ...
+        },
+        ...
+    },
+
+    "data_published_by": [
+        { "$ref": "../people/Keisuke" },
+        { "$ref": "../people/Julien" }
+    ]
+}

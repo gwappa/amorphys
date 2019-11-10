@@ -1,0 +1,14 @@
+{
+    "valid": [
+        {
+            "name": "Chaos Software",
+            "uri":  "https://www.chaos-software.cc"
+        }
+    ],
+    "invalid": [
+        {
+            "name": "Keisuke Sehara",
+            "uri":  "ORCID:0000-0000-0000-0000"
+        }
+    ]
+}

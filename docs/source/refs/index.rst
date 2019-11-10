@@ -7,3 +7,4 @@ Class reference
 
    section
    referrable
+   misc

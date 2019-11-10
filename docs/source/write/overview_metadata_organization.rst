@@ -9,13 +9,13 @@ Sections
 
 The ``amorphys`` metadata format consists of the following distinct sections:
 
-1. the ":doc:`organization <writing/organization>`" section, describing **project organization**
-2. the ":doc:`subjects <writing/subjects>`" section, describing the **subjects of interest** used throughout an experiment.
-3. the ":doc:`setups <writing/setups>`" section, describing **spatial organization of each setup**
-4. the ":doc:`acquisition <writing/acquisition>`" section, describing **programs and channels on each setup**
-5. the ":doc:`procedures <writing/procedures>`" section, describing **experimental procedures for each subject**
-6. the ":doc:`tasks <writing/tasks>`" section, describing the **task/protocol controls**
-7. the ":doc:`variables <writing/variables>`" section, describing the **experimental conditions and variables**
+1. the ":doc:`project <project_description>`" section, describing **general project organization**
+2. the ":doc:`subjects <../writing/subjects>`" section, describing the **subjects of interest** used throughout an experiment.
+3. the ":doc:`setups <../writing/setups>`" section, describing **spatial organization of each setup**
+4. the ":doc:`acquisition <../writing/acquisition>`" section, describing **programs and channels on each setup**
+5. the ":doc:`procedures <../writing/procedures>`" section, describing **experimental procedures for each subject**
+6. the ":doc:`tasks <../writing/tasks>`" section, describing the **task/protocol controls**
+7. the ":doc:`variables <../writing/variables>`" section, describing the **experimental conditions and variables**
 
 In principle, the six sections are independent from each other:
 **you can only implement some of them while leaving the others unimplemented**,
@@ -31,34 +31,34 @@ If you are unsure about anything along the way, do not hesitate to write only pa
 and go on to the next step without fully fill in the previous one
 (a nice version-control system will help in any case).
 
-1. Write the :doc:`organization <writing/organization>` section:
+1. Write the :doc:`project <project_description>` section:
 
     - *what is the name of the project?*
     - *who are involved in the project, with what funding source(s)?*
 
-2. Write the :doc:`subjects <writing/subjects>` section, whilst adding some subject-specific
-   variables in the :doc:`variables <writing/variables>` section:
+2. Write the :doc:`subjects <../writing/subjects>` section, whilst adding some subject-specific
+   variables in the :doc:`variables <../writing/variables>` section:
 
     - *what subject is used in the experiments?*
     - *in particular, which part of the subject is of interest?*
 
-3. Write the :doc:`procedures <writing/procedures>` section, whilst adding some phase-specific
-   variables in the :doc:`variables <writing/variables>` section:
+3. Write the :doc:`procedures <../writing/procedures>` section, whilst adding some phase-specific
+   variables in the :doc:`variables <../writing/variables>` section:
 
     - *in what order are manipulations and perturbations made?*
 
-4. Write the :doc:`setups <writing/setups>` section:
+4. Write the :doc:`setups <../writing/setups>` section:
 
     - *on each setup, what components are there in what layout?*
 
-5. Write the :doc:`acquisition <writing/acquisition>` section:
+5. Write the :doc:`acquisition <../writing/acquisition>` section:
 
     - *what type of signals are recorded and generated?*
     - *how do the programs make use of them?*
     - *what kind of data files are generated during each acquisition?*
 
-6. Write the :doc:`tasks <writing/tasks>` section, whilst adding further variables in the
-   :doc:`variables <writing/variables>` section:
+6. Write the :doc:`tasks <../writing/tasks>` section, whilst adding further variables in the
+   :doc:`variables <../writing/variables>` section:
 
     - *how are the setup and the subject modeled to interact with each other?*
 
@@ -66,7 +66,7 @@ and go on to the next step without fully fill in the previous one
 ^^^^^^^^^^^^^^^
 
 Each section in the ``amorphys`` metadata file(s) must have a certain specific format.
-For the exact specification of each section, refer to :doc:`refs/section`.
+For the exact specification of each section, refer to :doc:`../refs/section`.
 
 Formatting options
 ------------------
@@ -87,7 +87,7 @@ A most simple way of formatting in ``amorphys`` is to make a large, single JSON 
     {
         "$schema": "https://.../amorphys.json",
 
-        "organization" {
+        "project" {
             ...
         },
 
@@ -117,10 +117,10 @@ Multi-file format
 Another way of formatting in ``amorphys`` involves splitting sections into multiple JSON files:
 
 .. code-block:: JavaScript
-    :caption: in: "organization.json"
+    :caption: in: "project.json"
 
     {
-        "$schema": "https://.../amorphys.json#properties/organization",
+        "$schema": "https://.../sections/project.json",
 
         "dataset": {
             ...
@@ -137,7 +137,7 @@ Another way of formatting in ``amorphys`` involves splitting sections into multi
     :caption: in: "setups.json"
 
     {
-        "$schema": "https://.../amorphys.json#properties/setups",
+        "$schema": "https://.../sections/setups.json",
 
         "behavioral-rig": {
             ...

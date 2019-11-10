@@ -67,12 +67,40 @@ For reference to a person, in particular, the :py:class:`person` class is used.
 
         Can be ``null`` (but not recommended), if this individual does not have any ID.
 
+
+institution class
+-----------------
+
+.. py:class:: institution
+
+    This is a subclass of the :py:class:`individual` class, with no additional properties.
+    This class is used to e.g. represent the affiliated institution(s) of a :py:class:`contributor`.
+
+    .. literalinclude:: /_static/referrable/institution.json
+        :language: JavaScript
+        :caption:  Typical "institution" object
+
+    .. py:attribute:: name
+
+        a required property inherited from :py:attr:`individual.name`.
+        It represents the human-readable expression of this institution.
+
+    .. py:attribute:: uri
+
+        a required property inherited from :py:attr:`individual.uri`.
+        It represents the URL (i.e. starting with ``https://``) of the institution.
+
 person
 -------
 
 .. py:class:: person
 
     a subclass of :py:class:`individual` being used to refer to a person.
+
+    .. literalinclude:: /_static/referrable/person.json
+        :language: JavaScript
+        :caption:  Typical "person" object
+
     All of the properties described below are necessary.
 
     .. py:attribute:: name
@@ -107,6 +135,40 @@ person
         This field can well be ``null`` if this person does not have, or is not
         willing to share, a contact.
 
+contributor
+------------
+
+.. py:class:: contributor
+
+    It is a subclass of :py:class:`person`, and represents the contributor to a project.
+
+    .. literalinclude:: /_static/referrable/contributor.json
+        :language: JavaScript
+        :caption:  Typical "contributor" object
+
+    All the superclass properties are necessary:
+
+    - :py:attr:`name <person.name>`
+    - :py:attr:`uri <person.uri>`
+    - :py:attr:`lastname <person.lastname>`
+    - :py:attr:`firstnames <person.firstnames>`
+    - :py:attr:`contact <person.contact>`
+
+    In addition, all of the properties described below are necessary.
+
+    .. py:attribute:: affiliation
+
+        an :py:class:`institution` object, or a reference to one, or an array
+        of multiple of them, corresponding to the affiliations for this contributor,
+        *in relation with this dataset publication*.
+
+    .. py:attribute:: roles
+
+        an array of :py:class:`roles <credit>` of this contributor, specified in terms of the
+        `contributor roles <https://dictionary.casrai.org/Contributor_Roles>`_
+        (as it is defined in the `CRediT taxonomy <https://www.casrai.org/credit.html>`_).
+
+
 license
 --------
 
@@ -116,14 +178,9 @@ license
 
     For example, a CC0-license may be represented using :py:class:`license` as follows:
 
-    .. code-block:: JavaScript
-
-        {
-            "name":    "CC0",
-            "uri":     "http://creativecommons.org/publicdomain/zero/1.0",
-            "year":    "2019",
-            "authors": { "$ref": "/organization/people" }
-        }
+    .. literalinclude:: /_static/referrable/license.json
+        :language: JavaScript
+        :caption:  Typical "license" object
 
     a ``license`` object must have properties below:
 
@@ -156,24 +213,20 @@ citation
 
     For example, a citation may be described using :py:class:`citation` as follows:
 
-    .. code-block:: JavaScript
-
-        {
-            "reference_type": "is-supplement-to",
-            "name": "Sehara K, Colomb J, Larkum ME (2019) Dendritic mechanisms underlying foraging behavior of human subjects.",
-            "uri": "doi:10.1101/000000"
-        }
+    .. literalinclude:: /_static/referrable/citation.json
+        :language: JavaScript
+        :caption:  Typical "citation" object
 
     The following properties are required:
 
     .. py:attribute:: name
 
-        equivalent to :py:attr:`Referrable.name`, and is
+        equivalent to :py:attr:`referrable.name`, and is
         used to represent the human-readable citation.
 
     .. py:attribute:: uri
 
-        equivalent to :py:attr:`Referrable.uri`.
+        equivalent to :py:attr:`referrable.uri`.
         It represents the URI of the article, and may start either
         with ``https://`` or with ``doi:``, depending on the type of the article.
 

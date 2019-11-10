@@ -31,7 +31,8 @@ whatever it means.
    :caption: Table of contents:
 
    why_amorphys
-   overview_metadata_organization
+   write/overview_metadata_organization
+   write/project_description
    core/index
    writing/index
    refs/index

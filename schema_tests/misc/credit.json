@@ -1,0 +1,20 @@
+{
+    "valid": [
+        "conceptualization",
+        "project-administration",
+        "supervision",
+        "funding-acquisition",
+        "investigation",
+        "methodology",
+        "software",
+        "formal-analysis",
+        "visualization",
+        "writing-original-draft",
+        "writing-review-editing",
+        "data-curation"
+    ],
+    "invalid": [
+        "experiments",
+        "manuscript"
+    ]
+}

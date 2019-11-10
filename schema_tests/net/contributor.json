@@ -1,0 +1,34 @@
+{
+    "valid":   [
+        {
+            "name": "Keisuke S.K. Sehara",
+            "uri":  "ORCID:0000-0000-0000-0000",
+            "firstnames": "Keisuke S.K.",
+            "lastname":   "Sehara",
+            "contact":    "kkkkkeeeeiiiissssuuuukkkkeeee@mail.chaos-software.cc",
+            "affiliation": [ { "$ref": "institution.json#valid/0" } ],
+            "roles": [ "software", "data-curation" ]
+        }
+    ],
+    "invalid": [
+        {
+            "name": "Keisuke S.K. Sehara",
+            "uri":  "ORCID:0000-0000-0000-0000",
+            "firstnames": "Keisuke S.K.",
+            "lastname":   "Sehara",
+            "contact":    "kkkkkeeeeiiiissssuuuukkkkeeee@mail.chaos-software.cc",
+            "affiliation": [ { "$ref": "institution.json#valid/0" } ],
+            "roles": []
+        },
+        
+        {
+            "name": "Keisuke S.K. Sehara",
+            "uri":  "ORCID:0000-0000-0000-0000",
+            "firstnames": "Keisuke S.K.",
+            "lastname":   "Sehara",
+            "contact":    "kkkkkeeeeiiiissssuuuukkkkeeee@mail.chaos-software.cc",
+            "affiliation": [],
+            "roles": [ "software", "data-curation" ]
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "name":    "CC0",
+    "uri":     "http://creativecommons.org/publicdomain/zero/1.0",
+    "year":    "2019",
+    "authors": { "$ref": "/organization/people" }
+}

@@ -106,10 +106,10 @@ def _generate_test_case(schemafile, testfile):
 def parse_tests(schemadir=None, testsdir=None):
     schemadir = Path(DEFAULT_SCHEMA_DIR if schemadir is None else schemadir)
     testsdir  = Path(DEFAULT_TESTS_DIR if testsdir is None else testsdir)
-    for testfile in testsdir.iterdir():
-        schemafile = schemadir / testfile.name
-        if not schemafile.exists():
-            print(f"*** no corresponding schema file for: {testfile}", file=sys.stderr)
+    for schemafile in schemadir.iterdir():
+        testfile = testsdir / schemafile.name
+        if not testfile.exists():
+            print(f"*** no corresponding test file for: {schemafile.name}", file=sys.stderr)
             continue
         if testfile.is_file():
             if testfile.suffix == '.json':

@@ -1,0 +1,23 @@
+{
+    "valid": [
+        {
+            "name":        "HumanForagingBehavior_PostdocRoom",
+            "description": "Tracking data of human subjects performing a foraging task inside a post-doc room",
+            "keywords":    ["foraging behavior", "human", "scientists"],
+            "license":     {
+                "name":    "CC0",
+                "uri":     "http://creativecommons.org/publicdomain/zero/1.0",
+                "year":    "2019",
+                "authors": [ { "$ref": "../net/person.json#valid/0" } ]
+            },
+            "references": [
+                {
+                    "reference_type": "is-supplement-to",
+                    "name": "Sehara K, Colomb J, Larkum ME (2019) Dendritic mechanisms underlying foraging behavior of human subjects.",
+                    "uri": "doi:10.1101/000000"
+                }
+            ]
+        }
+    ],
+    "invalid": []
+}
