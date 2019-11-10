@@ -1,5 +1,9 @@
-Core objects
-============
+Core objects (obsolete)
+========================
+
+.. admonition:: Obsolete article
+
+    Documents under this page are under aggressive reconstruction.
 
 A set of core JSON classes used in ``amorphys`` is described here.
 

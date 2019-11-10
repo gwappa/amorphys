@@ -1,0 +1,4 @@
+[
+    { "$ref": "../people/Keisuke" },
+    { "$ref": "../people/Julien" }
+]

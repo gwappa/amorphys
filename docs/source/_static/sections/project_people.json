@@ -1,0 +1,17 @@
+{
+    "Keisuke": {
+        "name":       "Keisuke S.K. Sehara",
+        "lastname":   "Sehara",
+        "firstnames": "Keisuke S.K.",
+        "uri":        "ORCID:0000-0000-0000-0000",
+        "contact":    "kkkkkeeeeiiiissssuuuukkkkeeee@mail.chaos-software.cc",
+        "affiliation": [
+            { "$ref": "/affiliations/ChaosSoftware" }
+        ],
+        "roles": [
+            "data-curation",
+            "software"
+        ]
+    },
+    ...
+}
