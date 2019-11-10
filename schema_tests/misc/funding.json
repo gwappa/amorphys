@@ -1,0 +1,15 @@
+{
+    "valid": [
+        {
+            "source": {
+                "name": "Deutliche Forschungsgesellschaft",
+                "uri":  "https://www.dfg.io/"
+            },
+            "provided_to": [
+                { "$ref": "../net/person.json#valid/0" }
+            ],
+            "id": "01220022"
+        }
+    ],
+    "invalid": []
+}

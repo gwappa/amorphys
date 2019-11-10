@@ -64,4 +64,16 @@ funding
 
 .. py:class:: funding
 
-    (TODO)
+    :py:class:`funding` represents a funding source from an :py:class:`individual`.
+
+    .. py:attribute:: source
+
+        a required property referencing an :py:class:`individual`, indicating the funding body.
+
+    .. py:attribute:: provided_to
+
+        a required array of :py:class:`person` instances indicating to whom the funding is supposed to be given.
+
+    .. py:attribute:: id
+
+        a required ``string`` property that identifies the funding from the :py:attr:`source`.
