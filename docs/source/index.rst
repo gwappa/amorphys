@@ -15,8 +15,7 @@ whatever it means.
 .. note::
 
     Although most of the documents are too technical and unfriendly to researchers,
-    please take a look at :doc:`objectives` and :doc:`overview` to make a grasp of
-    why it is important.
+    please take a look at :doc:`why_amorphys` to make a grasp of why it is important.
 
 ``amorphys`` is part of the `physiology data organization project <https://physiology-data-organization.readthedocs.io/>`_
 (`project page <https://github.com/gwappa/physiology-data-organization>`_).
@@ -31,10 +30,11 @@ whatever it means.
    :maxdepth: 3
    :caption: Table of contents:
 
-   objectives
-   overview
+   why_amorphys
+   overview_metadata_organization
    core/index
    writing/index
+   refs/index
 
 .. figure:: https://i.creativecommons.org/l/by/4.0/88x31.png
   :alt: License: CC-BY 4.0

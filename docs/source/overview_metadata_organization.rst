@@ -1,5 +1,5 @@
-Overview
-========
+Overview of metadata organization
+==================================
 
 .. contents:: Contents
     :local:
@@ -9,13 +9,13 @@ Sections
 
 The ``amorphys`` metadata format consists of the following distinct sections:
 
-1. the ":doc:`organization <organization>`" section, describing **project organization**
-2. the ":doc:`subjects <subjects>`" section, describing the **subjects of interest** used throughout an experiment.
-3. the ":doc:`setups <setups>`" section, describing **spatial organization of each setup**
-4. the ":doc:`acquisition <acquisition>`" section, describing **programs and channels on each setup**
-5. the ":doc:`procedures <procedures>`" section, describing **experimental procedures for each subject**
-6. the ":doc:`tasks <tasks>`" section, describing the **task/protocol controls**
-7. the ":doc:`variables <variables>`" section, describing the **experimental conditions and variables**
+1. the ":doc:`organization <writing/organization>`" section, describing **project organization**
+2. the ":doc:`subjects <writing/subjects>`" section, describing the **subjects of interest** used throughout an experiment.
+3. the ":doc:`setups <writing/setups>`" section, describing **spatial organization of each setup**
+4. the ":doc:`acquisition <writing/acquisition>`" section, describing **programs and channels on each setup**
+5. the ":doc:`procedures <writing/procedures>`" section, describing **experimental procedures for each subject**
+6. the ":doc:`tasks <writing/tasks>`" section, describing the **task/protocol controls**
+7. the ":doc:`variables <writing/variables>`" section, describing the **experimental conditions and variables**
 
 In principle, the six sections are independent from each other:
 **you can only implement some of them while leaving the others unimplemented**,
@@ -31,50 +31,42 @@ If you are unsure about anything along the way, do not hesitate to write only pa
 and go on to the next step without fully fill in the previous one
 (a nice version-control system will help in any case).
 
-1. Write the :doc:`organization <organization>` section:
+1. Write the :doc:`organization <writing/organization>` section:
 
     - *what is the name of the project?*
     - *who are involved in the project, with what funding source(s)?*
 
-2. Write the :doc:`subjects <subjects>` section, whilst adding some subject-specific
-   variables in the :doc:`variables <variables>` section:
+2. Write the :doc:`subjects <writing/subjects>` section, whilst adding some subject-specific
+   variables in the :doc:`variables <writing/variables>` section:
 
     - *what subject is used in the experiments?*
     - *in particular, which part of the subject is of interest?*
 
-3. Write the :doc:`procedures <procedures>` section, whilst adding some phase-specific
-   variables in the :doc:`variables <variables>` section:
+3. Write the :doc:`procedures <writing/procedures>` section, whilst adding some phase-specific
+   variables in the :doc:`variables <writing/variables>` section:
 
     - *in what order are manipulations and perturbations made?*
 
-4. Write the :doc:`setups <setups>` section:
+4. Write the :doc:`setups <writing/setups>` section:
 
     - *on each setup, what components are there in what layout?*
 
-5. Write the :doc:`acquisition <acquisition>` section:
+5. Write the :doc:`acquisition <writing/acquisition>` section:
 
     - *what type of signals are recorded and generated?*
     - *how do the programs make use of them?*
     - *what kind of data files are generated during each acquisition?*
 
-6. Write the :doc:`tasks <tasks>` section, whilst adding further variables in the
-   :doc:`variables <variables>` section:
+6. Write the :doc:`tasks <writing/tasks>` section, whilst adding further variables in the
+   :doc:`variables <writing/variables>` section:
 
     - *how are the setup and the subject modeled to interact with each other?*
 
 "section" class
 ^^^^^^^^^^^^^^^
 
-.. py:class:: section
-
-    Each section of ``amorphys`` has different properties of its own.
-    But it can have an optional property, :py:attr:`$description` to describe itself.
-
-    .. py:attribute:: $description
-
-        a human-readable ``string`` description of the section.
-        It is recommended to include this property for every section,
-        for increased understandability.
+Each section in the ``amorphys`` metadata file(s) must have a certain specific format.
+For the exact specification of each section, refer to :doc:`refs/section`.
 
 Formatting options
 ------------------

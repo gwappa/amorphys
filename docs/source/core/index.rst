@@ -10,7 +10,7 @@ The three key concepts in ``amorphys`` are:
 3. **Context**: represents a group of Entities and Relationships.
 
 In addition, several supportive classes are defined to facilitate annotation;
-refer to :doc:`referrable`, :doc:`measurements`, :doc:`protocol-control` and :doc:`variable`.
+refer to :doc:`../refs/referrable`, :doc:`measurements`, :doc:`protocol-control` and :doc:`variable`.
 
 .. toctree::
    :maxdepth: 2
@@ -20,7 +20,6 @@ refer to :doc:`referrable`, :doc:`measurements`, :doc:`protocol-control` and :do
    relationship
    context
    measurements
-   referrable
    protocol-control
    behavioral-model
    variable

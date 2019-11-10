@@ -1,5 +1,5 @@
-URI-based reference
-===================
+"Referrable" objects
+=====================
 
 .. contents:: Contents
     :local:
@@ -20,8 +20,8 @@ but it may be substituted later if there exists any structure general enough to 
 
     TODO: make a nice class diagram
 
-Referrable class
-----------------
+referrable
+-----------
 
 .. py:class:: referrable
 
@@ -40,8 +40,8 @@ Referrable class
 
 
 
-Individual class
-----------------
+individual
+-----------
 
 Any individuals (people, institutions, companies etc.) being referred to through the URI,
 are represented by the :py:class:`individual` class.
@@ -67,8 +67,8 @@ For reference to a person, in particular, the :py:class:`person` class is used.
 
         Can be ``null`` (but not recommended), if this individual does not have any ID.
 
-Person class
-------------
+person
+-------
 
 .. py:class:: person
 
@@ -107,8 +107,8 @@ Person class
         This field can well be ``null`` if this person does not have, or is not
         willing to share, a contact.
 
-License class
--------------
+license
+--------
 
 .. py:class:: license
 
@@ -147,8 +147,8 @@ License class
         a ``string`` representing the year (or a range of years) when
         this license is valid from.
 
-Citation class
---------------
+citation
+---------
 
 .. py:class:: citation
 

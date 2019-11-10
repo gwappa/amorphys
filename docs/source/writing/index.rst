@@ -7,7 +7,6 @@ Here, metadata formatting in ``amorphys`` is described.
    :maxdepth: 2
    :caption: Table of contents:
 
-   overview
    organization
    subjects
    setups
