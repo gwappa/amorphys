@@ -6,6 +6,7 @@
 
 This repository consists of:
 
+- The [amorphys schema](schema) directory.
 - The manuscript for the [amorphys documentation](https://amorphys-documentation.readthedocs.io/).
 
 This is part of the [physiology data organization project](https://physiology-data-organization.readthedocs.io/)

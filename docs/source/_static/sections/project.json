@@ -1,5 +1,6 @@
 {
-    "$schema":      "https://.../sections/project.json"
+    "$schema":      "https://raw.githubusercontent.com/gwappa/amorphys/master/schema/sections/project.json",
+    
     "description": "the project organization for foraging experiment",
 
     "dataset": {
