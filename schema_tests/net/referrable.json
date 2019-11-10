@@ -1,0 +1,13 @@
+{
+    "valid": [
+        {
+            "name": "amorphys",
+            "uri": "https://github.com/gwappa/amorphys"
+        }
+    ],
+    "invalid": [
+        {
+            "name": "amorphys"
+        }
+    ]
+}

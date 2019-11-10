@@ -1,0 +1,19 @@
+{
+    "valid": [
+        {
+            "name": "Keisuke S.K. Sehara",
+            "uri":  "ORCID:0000-0000-0000-0000",
+            "firstnames": "Keisuke S.K.",
+            "lastname":   "Sehara",
+            "contact":    "kkkkkeeeeiiiissssuuuukkkkeeee@mail.chaos-software.cc"
+        }
+    ],
+    "invalid": [
+        {
+            "name": "Keisuke S.K. Sehara",
+            "uri":  null,
+            "firstnames": "Keisuke S.K.",
+            "lastname":   "Sehara"
+        }
+    ]
+}

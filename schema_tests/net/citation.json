@@ -1,0 +1,16 @@
+{
+    "valid": [
+        {
+            "reference_type": "is-supplement-to",
+            "name": "Sehara K, Colomb J, Larkum ME (2019) Dendritic mechanisms underlying foraging behavior of human subjects.",
+            "uri": "doi:10.1101/000000"
+        }
+    ],
+    "invalid": [
+        {
+            "reference_type": "based-on",
+            "name": "Sehara K, Colomb J, Larkum ME (2019) Dendritic mechanisms underlying foraging behavior of human subjects.",
+            "uri": "doi:10.1101/000000"
+        }
+    ]
+}

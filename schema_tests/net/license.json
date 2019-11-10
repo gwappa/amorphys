@@ -1,0 +1,16 @@
+{
+    "valid": [
+        {
+            "name": "CC0",
+            "uri": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "authors": [ { "$ref": "person.json#valid/0" } ],
+            "year":    "2019-"
+        }
+    ],
+    "invalid": [
+        {
+            "name": "CC0",
+            "uri": "https://creativecommons.org/publicdomain/zero/1.0/"
+        }
+    ]
+}
