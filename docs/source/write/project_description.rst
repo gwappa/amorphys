@@ -63,10 +63,10 @@ The "affiliation" subsection is a mapping from a name to a :py:class:`institutio
 
 .. _describing_fundings:
 
-"funded_by" subsection
+"fundings" subsection
 -----------------------
 
-The "funded_by" subsection is a mapping from a name to a :py:class:`funding`, each looking like below:
+The "fundings" subsection is a mapping from a name to a :py:class:`funding`, each looking like below:
 
 .. literalinclude:: /_static/sections/project_fundings.json
     :language: javascript

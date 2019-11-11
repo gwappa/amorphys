@@ -4,7 +4,7 @@
 
     "allOf": [
         { "$ref": "section.json" },
-        
+
         {
             "properties": {
                 "dataset": { "$ref": "../misc/dataset.json" },
@@ -16,7 +16,7 @@
                     "type": "object",
                     "^[A-Za-z_][A-Za-z0-9_]*$": { "$ref": "../net/institution.json" }
                 },
-                "funded_by": {
+                "fundings": {
                     "type": "object",
                     "^[A-Za-z_][A-Za-z0-9_]*$": { "$ref": "../misc/funding.json" }
                 },
@@ -31,7 +31,7 @@
                 "dataset",
                 "people",
                 "affiliations",
-                "funded_by",
+                "fundings",
                 "data_published_by"
             ]
         }
